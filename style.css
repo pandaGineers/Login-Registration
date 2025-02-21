@@ -33,9 +33,9 @@ main{
   height: 640px;
   background-color: rgba(167, 145, 81, 0.523);
   border-radius: 3.3rem;
-  box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.186), /* Left shadow */
-  30px 30px 40px rgba(0, 0, 0, 0.186), /* Right shadow */
-  0px 30px 40px rgba(0, 0, 0, 0.079);  /* Bottom shadow */
+  box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.186), 
+  30px 30px 40px rgba(0, 0, 0, 0.186), 
+  0px 30px 40px rgba(0, 0, 0, 0.079); 
 }
 
 .inner-box {
@@ -222,7 +222,7 @@ main.sign-up-mode .carousel {
   grid-template-rows: auto 1fr;
   padding-bottom: 2rem;
   overflow: hidden;
-  transition: 0.8s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 
 .images-wrapper {
@@ -236,7 +236,7 @@ main.sign-up-mode .carousel {
   grid-column: 1/2;
   grid-row: 1/2;
   opacity: 0;
-  transition: opacity 0.2s, transform 0.4s ease-in-out;
+  transition: opacity 0.3s, transform 0.4s ease-in-out;
 }
 
 .img-1 {
@@ -334,7 +334,7 @@ main.sign-up-mode .carousel {
   form {
     max-width: revert;
     padding: 1.5rem 2.5rem 2rem;
-    transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+    transition: transform 0.6s ease-in-out, opacity 0.45s linear;
   }
 
   .heading {
