@@ -31,8 +31,10 @@ main{
   width: 100%;
   max-width: 1020px;
   height: 640px;
-  background: rgba(95, 68, 22, 0.542); /* Semi-transparent background */
+  background: rgba(95, 68, 22, 0.542); 
   border-radius: 3.3rem;
+  display: flex;
+  overflow: hidden;
   
 }
 
@@ -98,13 +100,6 @@ form.sign-up-form {
   margin-right: 0.3rem;
 }
 
-.logo h4 {
-  font-size: 1.2rem;
-  margin-top: -9px;
-  letter-spacing: -0.5px;
-  color: #532019;
-}
-
 .logo h3 {
   font-size: 1.2rem;
   margin-top: -9px;
@@ -112,16 +107,16 @@ form.sign-up-form {
   color: #532019;
 }
 
-.heading h2 {
+.heading h4 {
   margin-top: -50px;
-  font-size: 2.0rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #28300e;
 }
 
-.heading1 h2 {
+.heading1 h4 {
   margin-top: -50px;
-  font-size: 2.0rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #28300e;
 }
@@ -216,6 +211,7 @@ label {
   text-align:center ;
 }
 .text1 {
+  text-align:center;
   color: #21110a;
   font-size: .8rem;
 }
@@ -350,6 +346,13 @@ main.sign-up-mode .carousel {
 }
 
 @media (max-width: 850px) {
+
+  .blur {
+    height: auto;
+    max-width: 550px;
+    overflow: hidden;
+  }
+
   .outer-box {
     height: auto;
     max-width: 550px;
@@ -412,6 +415,10 @@ main.sign-up-mode .carousel {
 @media (max-width: 530px) {
   main {
     padding: 1rem;
+  }
+
+  .blur {
+    border-radius: 2rem;
   }
 
   .outer-box {
