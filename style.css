@@ -212,6 +212,7 @@ label {
   cursor: pointer;
   border-radius: 0.8rem;
   font-size: 0.8rem;
+  font-weight: 450;
   margin-bottom: 2rem;
   transition: 0.3s;
 }
