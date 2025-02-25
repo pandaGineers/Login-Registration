@@ -32,7 +32,7 @@
         <h2>Get Started</h2>
           <h6>Already have an account?</h6>
           
-            <a href="#" class="toggle"><strong>Sign in</strong> </a> <!--registration page-->
+            <a href="#" onclick="event.preventDefault(); return false;" class="toggle"><strong>Sign in</strong> </a> <!--registration page-->
       </div>
 
       <div class="actual-form">
@@ -89,7 +89,7 @@
                 
                 <h2>Welcome Back</h2>
                 <h6>Not registred yet?</h6>
-                <a href="#" class="toggle"><strong>Sign up</strong></a> <!--login page-->
+                <a href="#" onclick="event.preventDefault(); return false;" class="toggle"><strong>Sign up</strong></a> <!--login page-->
               </div>
 
               <div class="actual-form">
@@ -128,15 +128,15 @@
                
                   <p class="text">
                   
-                    <a href="#"><strong>Forgotten your password?</strong></a>  <!--redirect you to your email-->
+                    <a href="#" onclick="event.preventDefault(); return false;"><strong>Forgotten your password?</strong></a>  <!--redirect you to your email-->
                     </p>
                
                 
                     <br>
                 <p class="text1">
                   By signing up, I agree to the
-                  <a href="#">Terms of Services</a> and
-                  <a href="#">Privacy Policy</a>
+                  <a href="#" onclick="event.preventDefault(); return false;">Terms of Services</a> and
+                  <a href="#" onclick="event.preventDefault(); return false;">Privacy Policy</a>
                 </p>
               </div>
             </form>
