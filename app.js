@@ -5,6 +5,13 @@ const bullets = document.querySelectorAll(".bullets span");
 const images = document.querySelectorAll(".image");
 
 
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function (event) {
+    if (this.getAttribute('href') === '#') {
+      event.preventDefault();
+    }
+  });
+});
 inputs.forEach((inp) => {
   inp.addEventListener("focus", () => {
     inp.classList.add("active");
