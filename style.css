@@ -26,12 +26,22 @@ main{
   overflow: hidden;
 }
 
+.blur{
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  height: 640px;
+  background: rgba(95, 68, 22, 0.542); /* Semi-transparent background */
+  
+  
+}
+
 .outer-box {
   position: relative;
   width: 100%;
   max-width: 1020px;
   height: 640px;
-  background-color: rgba(167, 145, 81, 0.523);
+  background-color: rgba(189, 163, 103, 0.448);
   border-radius: 3.3rem;
   box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.186), 
   30px 30px 40px rgba(0, 0, 0, 0.186), 
@@ -57,7 +67,7 @@ main{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  transition: 0.8s ease-in-out;
+  transition: 0.7s ease-in-out;
 }
 
 form {
@@ -84,40 +94,62 @@ form.sign-up-form {
 }
 
 .logo img {
-  width: 27px;
+  width: 100px;
   margin-right: 0.3rem;
 }
 
 .logo h4 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: -9px;
   letter-spacing: -0.5px;
-  color: #151111;
+  color: #532019;
+}
+
+.logo h3 {
+  font-size: 1.2rem;
+  margin-top: -9px;
+  letter-spacing: -0.5px;
+  color: #532019;
 }
 
 .heading h2 {
-  font-size: 2.1rem;
+  margin-top: -50px;
+  font-size: 2.0rem;
   font-weight: 600;
-  color: #151111;
+  color: #28300e;
+}
+
+.heading1 h2 {
+  margin-top: -50px;
+  font-size: 2.0rem;
+  font-weight: 600;
+  color: #28300e;
+}
+
+.heading1 h6 {
+  color: #dddbb5;
+  font-weight: 400;
+  font-size: 0.78rem;
+  display: inline;
 }
 
 .heading h6 {
-  color: #bababa;
+  color: #dddbb5;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   display: inline;
 }
 
 .toggle {
-  color: #3c3f26;
+  color: #90cb3e;
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: 0.3s;
 }
 
 .toggle:hover {
-  color: #8371fd;
+  color: #99ec47;
 }
 
 .input-wrap {
@@ -133,10 +165,11 @@ form.sign-up-form {
   background: none;
   border: none;
   outline: none;
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid #bab38d;
   padding: 0;
   font-size: 0.95rem;
-  color: #151111;
+  font-weight: bold;
+  color: #29170c;
   transition: 0.4s;
 }
 
@@ -146,13 +179,13 @@ label {
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.95rem;
-  color: #bbb;
+  color: #d2d0a0;
   pointer-events: none;
   transition: 0.4s;
 }
 
 .input-field.active {
-  border-bottom-color: #151111;
+  border-bottom-color: #23180a;
 }
 
 .input-field.active + label {
@@ -164,8 +197,8 @@ label {
   display: inline-block;
   width: 100%;
   height: 43px;
-  background-color: #151111;
-  color: #fff;
+  background-color: #461710;
+  color: #e1d8a9;
   border: none;
   cursor: pointer;
   border-radius: 0.8rem;
@@ -175,21 +208,26 @@ label {
 }
 
 .sign-btn:hover {
-  background-color: #8371fd;
+  background-color: #372012;
 }
 
 .text {
-  color: #bbb;
-  font-size: 0.7rem;
+  
+  text-align:center ;
+}
+.text1 {
+  color: #21110a;
+  font-size: .8rem;
 }
 
 .text a {
-  color: #bbb;
+  font-size:small;
+  color: #143752;
   transition: 0.3s;
 }
 
 .text a:hover {
-  color: #8371fd;
+  color: #334f73;
 }
 
 main.sign-up-mode form.sign-in-form {
@@ -283,6 +321,7 @@ main.sign-up-mode .carousel {
   font-size: 1.6rem;
 }
 
+
 .bullets {
   display: flex;
   align-items: center;
@@ -311,7 +350,7 @@ main.sign-up-mode .carousel {
 }
 
 @media (max-width: 850px) {
-  .box {
+  .outer-box {
     height: auto;
     max-width: 550px;
     overflow: hidden;
@@ -375,7 +414,7 @@ main.sign-up-mode .carousel {
     padding: 1rem;
   }
 
-  .box {
+  .outer-box {
     border-radius: 2rem;
   }
 
@@ -393,10 +432,39 @@ main.sign-up-mode .carousel {
   }
 
   .text-group h2 {
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
 
   form {
     padding: 1rem 2rem 1.5rem;
   }
+}
+
+.google-icon {
+  position: absolute;
+  left: 35px; /* Adjust position inside the button */
+  top: 57%;
+  transform: translateY(-50%);
+  
+  width: 20px; /* Icon size */
+  height: 20px;
+  pointer-events: none; /* Prevent interaction */
+}
+
+.google-sign-btn {
+  display: inline-block;
+  width: 100%;
+  height: 43px;
+  background-color: #461710;
+  color: #e1d8a9;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  transition: 0.3s;
+}
+
+.google-sign-btn:hover {
+  background-color: #372012;
 }
