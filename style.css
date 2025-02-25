@@ -96,15 +96,23 @@ form.sign-up-form {
 }
 
 .logo img {
-  width: 100px;
-  margin-right: 0.3rem;
+  width: 130px;
+  margin-left: -0.9rem;
 }
 
-.logo h3 {
-  font-size: 1.2rem;
+.logo h2 {
+  font-size: 1.4rem;
   margin-top: -9px;
   letter-spacing: -0.5px;
   color: #532019;
+}
+
+.heading{
+  text-align: center;
+}
+
+.heading1{
+  text-align: center;
 }
 
 .heading h4 {
@@ -112,6 +120,7 @@ form.sign-up-form {
   font-size: 1.5rem;
   font-weight: 600;
   color: #28300e;
+  
 }
 
 .heading1 h4 {
@@ -119,6 +128,7 @@ form.sign-up-form {
   font-size: 1.5rem;
   font-weight: 600;
   color: #28300e;
+  
 }
 
 .heading1 h6 {
@@ -126,6 +136,7 @@ form.sign-up-form {
   font-weight: 400;
   font-size: 0.78rem;
   display: inline;
+
 }
 
 .heading h6 {
@@ -133,6 +144,7 @@ form.sign-up-form {
   font-weight: 400;
   font-size: 0.78rem;
   display: inline;
+
 }
 
 .toggle {
@@ -141,6 +153,8 @@ form.sign-up-form {
   font-size: 0.9rem;
   font-weight: 500;
   transition: 0.3s;
+  display: inline;
+  
 }
 
 .toggle:hover {
