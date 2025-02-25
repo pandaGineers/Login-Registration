@@ -6,28 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KaruKunjo</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="563117427192-ahji9v4sbn696if75j1gkgivq90prf4s.apps.googleusercontent.com">
+    
+
   </head>
   <body>
     <main>
+      <div class="blur">
       <div class="outer-box"> <!--box-->>
 
-      <div class="inner-box">
+      <div class="inner-box"> <!--inner box-->
 
       <div class="forms-wrap">
             <form action="index.html" autocomplete="off" class="sign-in-form">
       <div class="logo">
-            <img src="./image/img5.jpg" alt="" /> <!--logo-->
+            <img src="./image/logo.png" alt="" /> <!--logo-->
 
-            <h4>Karukunjo</h4>
+            <h3>|| KaruKunjo</h3>
       </div>
 
-      <div class="heading">
+      <div class="heading1">
 
-          <h2>Welcome Back</h2>
-
-          <h6>Not registred yet?</h6>
-
-            <a href="#" class="toggle">Sign up</a> <!--registration page-->
+          
+        <h2>Get Started</h2>
+          <h6>Already have an account?</h6>
+          
+            <a href="#" class="toggle"><strong>Sign in</strong> </a> <!--registration page-->
       </div>
 
       <div class="actual-form">
@@ -40,7 +45,7 @@
           autocomplete="off"
           required
           />
-          <label>Name</label>
+          <label>Name</label>  <!--registration name-->
       </div>
       <div class="input-wrap">
         <input
@@ -49,7 +54,7 @@
           autocomplete="off"
           required
         />
-        <label>Email</label>
+        <label>Email</label>  <!--registration email-->
       </div>
 
       <div class="input-wrap">
@@ -60,11 +65,15 @@
           autocomplete="off"
           required
           />
-          <label>Password</label>
+          <label>Password</label>  <!--registration pass-->
            </div>
 
-        <input type="submit" value="Submit" class="sign-btn" />
-
+        <input type="submit" value="Sign up" class="sign-btn" />
+        
+      
+        
+      
+      
          
       </div>
       <br>
@@ -72,14 +81,15 @@
 
             <form action="index.html" autocomplete="off" class="sign-up-form">
               <div class="logo">
-                <img src="./image/img5.jpg" alt="Karukunjo" />
-                <h4>Karukunjo</h4>
+                <img src="./image/logo.png" alt="Karukunjo" /> <!--logo-->
+                <h4>||  KaruKunjo</h4>
               </div>
 
               <div class="heading">
-                <h2>Get Started</h2>
-                <h6>Already have an account?</h6>
-                <a href="#" class="toggle">Sign in</a> <!--login page-->
+                
+                <h2>Welcome Back</h2>
+                <h6>Not registred yet?</h6>
+                <a href="#" class="toggle"><strong>Sign up</strong></a> <!--login page-->
               </div>
 
               <div class="actual-form">
@@ -109,12 +119,21 @@
 
                 <input type="submit" value="Sign In" class="sign-btn" />
 
-                <p class="text">
-                  Forgotten your password?
-                  <a href="#">Get help</a>
-                  </p>
+                <div class="g-signin2" data-onsuccess="onSignIn" style="display: none;"></div> <!--Google/disable-->
 
-                <p class="text">
+                <div class="input-wrap" onclick="triggerGoogleSignIn()">
+                  <input type="submit" value="Sign in with Google" class="google-sign-btn" />
+                  <img src="./image/google.png" alt="Google Icon" class="google-icon">
+                </div>
+               
+                  <p class="text">
+                  
+                    <a href="#"><strong>Forgotten your password?</strong></a>  <!--redirect you to your email-->
+                    </p>
+               
+                
+                    <br>
+                <p class="text1">
                   By signing up, I agree to the
                   <a href="#">Terms of Services</a> and
                   <a href="#">Privacy Policy</a>
@@ -146,6 +165,7 @@
           </div>
         </div>
       </div>
+    </div>
     </main>
 
     <!-- Javascript file -->
