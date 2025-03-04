@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="563117427192-vf4tghrqh9smlqmm9otqdfh1n1lld56v.apps.googleusercontent.com">
     <title>Home</title>
 
     <!-- remix icon cdn link  -->
@@ -14,7 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/stylehome.css">
+    <link rel="stylesheet" href="stylehome.css">
+    <!--login page-->
+    <link href="index.html">
 
 </head>
 
@@ -33,7 +36,10 @@
             <div id="menu-btn" class="ri-menu-line"></div>
             <div id="search-btn" class="ri-search-line"></div>
             <div id="cart-btn" class="ri-shopping-cart-line"></div>
-            <div id="login-btn" class="ri-user-line"></div>
+            <a href="index.html" id="login-btn">
+                <i class="ri-user-line"></i>
+            </a>
+            
         </div>
 
      </header>
@@ -67,7 +73,7 @@
             <i class="ri-close-line close-icon"></i>
             <img src="./image/product12.jpg" alt="">
             <div class="content">
-                <h3>modern furniture</h3>
+                <h3>CHITROPOT</h3>
                 <span class="quantity">1</span>
                 <span class="multiply">x</span>
                 <span class="price">140</span>
@@ -78,7 +84,7 @@
             <i class="ri-close-line close-icon"></i>
             <img src="./image/product2.jpg" alt="">
             <div class="content">
-                <h3>modern furniture</h3>
+                <h3>MATIR PATRO</h3>
                 <span class="quantity">1</span>
                 <span class="multiply">x</span>
                 <span class="price">140</span>
@@ -89,7 +95,7 @@
             <i class="ri-close-line close-icon"></i>
             <img src="./image/product6.jpg" alt="">
             <div class="content">
-                <h3>modern furniture</h3>
+                <h3>BATI</h3>
                 <span class="quantity">1</span>
                 <span class="multiply">x</span>
                 <span class="price">140</span>
@@ -100,7 +106,7 @@
             <i class="ri-close-line close-icon"></i>
             <img src="./image/product10.jpg" alt="">
             <div class="content">
-                <h3>modern furniture</h3>
+                <h3>MRITSRIJON</h3>
                 <span class="quantity">1</span>
                 <span class="multiply">x</span>
                 <span class="price">140</span>
@@ -114,14 +120,88 @@
 
     <!-- shopping cart end  -->
 
-
+     
 
     <!-- home section starts  -->
+
+     <section class="home">
+
+        <div class="slides-container">
+            <div class="slide active">
+                <div class="content">
+                    <span>new arrivals</span>
+                    <h3>CANE BAG</h3>
+                    <a href="shop.html" class="btn">Shop now</a>
+                </div>
+                <div class="image">
+                    <img src="image/product15.png" alt=" ">
+
+                </div>
+            </div>
+            <div class="slide">
+                <div class="content">
+                    <span>new arrivals</span>
+                    <h3>JUTE LAMP</h3>
+                    <a href="shop.html" class="btn">Shop now</a>
+                </div>
+                <div class="image">
+                    <img src="image/product13.png" alt=" ">
+
+                </div>
+            </div>
+            <div class="slide active">
+                <div class="content">
+                    <span>new arrivals</span>
+                    <h3>WOODEN WALLBOARDS</h3>
+                    <a href="shop.html" class="btn">Shop now</a>
+                </div>
+                <div class="image">
+                    <img src="image/product14.png" alt=" ">
+
+                </div>
+
+        </div>
+        <div id="slide-next" onclick="next()" class="ri-arrow-right-line"></div>
+        <div id="slide-prev" onclick="prev()" class="ri-arrow-left-line"></div>
+     </section>
 
     <!-- home section ends -->
 
 
     <!-- banner section starts  -->
+
+     <section class="banner-container">
+       
+            <div class="banner">
+                <img src="image/product11.jpg" alt=" ">
+                <div class="content">
+                    <span>Limited Offer</span>
+                    <h3>upto 20%</h3>
+                    <a href="shop.html" class="btn">Shop now</a>
+                </div>
+
+            </div>
+        
+            <div class="banner">
+                <img src="image/product2.jpg" alt=" ">
+                <div class="content">
+                    <span>Limited Offer</span>
+                    <h3>upto 20%</h3>
+                    <a href="shop.html" class="btn">Shop now</a>
+                </div>
+
+            </div>
+
+            <div class="banner">
+                <img src="image/product6.jpg" alt=" ">
+                <div class="content">
+                    <span>Limited Offer</span>
+                    <h3>upto 20%</h3>
+                    <a href="shop.html" class="btn">Shop now</a>
+                </div>
+
+            </div>
+     </section>
 
     <!-- banner section ends -->
 
@@ -173,9 +253,8 @@
 
 
     <!-- custom js file link  -->
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
 </html>
-
