@@ -462,6 +462,12 @@ main.sign-up-mode .carousel {
   }
 }
 
+.input-wrap1 {
+  position: relative;
+  height: 37px;
+  margin-bottom: 2rem;
+}
+
 .google-icon {
   position: absolute;
   left: 35px; /* Adjust position inside the button */
@@ -473,12 +479,15 @@ main.sign-up-mode .carousel {
   pointer-events: none; /* Prevent interaction */
 }
 
-.google-sign-btn {
+.g-signin2{
+  display: none;
+}
+
+.google-sign-btn1 {
   display: inline-block;
   width: 100%;
   height: 43px;
   background-color: #461710;
-  
   color: #e1d8a9;
   border: none;
   cursor: pointer;
@@ -491,6 +500,9 @@ main.sign-up-mode .carousel {
 
 }
 
-.google-sign-btn:hover {
+.google-sign-btn1:hover {
   background-color: #372012;
 }
+
+
+
