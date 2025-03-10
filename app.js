@@ -45,18 +45,8 @@ function moveSlider() {
 bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
-function triggerGoogleSignIn() {
-  let googleButton = document.querySelector('.g-signin2');
-  if (googleButton) {
-    googleButton.querySelector('div').click();
-  }
-}
-document.addEventListener("DOMContentLoaded", function () {
-  let googleSignInDiv = document.querySelector(".input-wrap");
-
-  if (googleSignInDiv) {
-      googleSignInDiv.addEventListener("click", triggerGoogleSignIn);
-  }
-});
 
 
+
+
+  
