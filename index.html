@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KaruKunjo</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="563117427192-ahji9v4sbn696if75j1gkgivq90prf4s.apps.googleusercontent.com">
+    <script src="signin.js" defer type="module"></script>
+    <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="563117427192-ahji9v4sbn696if75j1gkgivq90prf4s.apps.googleusercontent.com">-->
+    
     
 
   </head>
@@ -61,11 +63,13 @@
 
                 <input type="submit" value="Sign In" class="sign-btn" onclick="location.href='home.html';" />
 
-                <div class="g-signin2" data-onsuccess="onSignIn" style="display: none;"></div> <!--Google/disable-->
+               
 
-                <div class="input-wrap" onclick="triggerGoogleSignIn()">
-                  <input type="submit" value="Sign in with Google" class="google-sign-btn"  onclick="location.href='home.html';" />
-                  <img src="./image/google.png" alt="Google Icon" class="google-icon">
+                <div class="input-wrap">
+                  <button id="google-sign-btn" class="google-sign-btn1">Sign in With Google
+                    <i class="fab fa-google"></i>
+                    <img src="./image/google.png" alt="Google Icon" class="google-icon">
+                  </button>
                 </div>
                
                   <p class="text">
