@@ -77,13 +77,18 @@
                     <a href="#" onclick="event.preventDefault(); return false;"><strong>Forgot your password?</strong></a>  <!--redirect you to your email-->
                     </p>
                
-                
                     <br>
-                <p class="text1">
-                  By signing up, I agree to the
-                  <a href="Terms of Services.txt" >Terms of Services</a> and
-                  <a href="Privacy policy.txt">Privacy Policy</a>
-                </p>
+                    <div class="input-wrap1">
+                      <button id="phone" class="phone">
+                        <img src="./image/otp.png" alt="phone icon" class="phone-icon">
+                      </button>
+
+                      <button id="facebook" class="facebook">
+                        <img src="./image/facebook1.png" alt="facebook icon" class="facebook-icon">
+                      </button>
+
+                    </div>
+                
               </div>
             </form>
 
@@ -117,14 +122,13 @@
                   <label>Name</label>  <!--registration name-->
               </div>
               <div class="input-wrap">
-                <input
-                  type="email"
-                  class="input-field"
-                  autocomplete="off"
-                  required
-                />
-                <label>Email</label>  <!--registration email-->
-              </div>
+                <input type="tel" class="input-field" id="phone" autocomplete="off" required />
+                <label>Phone Number</label>
+            </div>
+            <div class="input-wrap">
+              <input type="email" class="input-field" id="email" autocomplete="off" />
+              <label>Email (Optional)</label>
+            </div>
         
               <div class="input-wrap">
                 <input
@@ -135,15 +139,16 @@
                   required
                   />
                   <label>Password</label>  <!--registration pass-->
-                   </div>
+              </div>
         
                 <input type="submit" value="Sign up" class="sign-btn" />
-                
+                <p class="text1">
+                  By signing up, I agree to the
+                  <a href="Terms of Services.txt" >Terms of Services</a> and
+                  <a href="Privacy policy.txt">Privacy Policy</a>
+                </p>
               
-                
               
-              
-                 
               </div>
               <br>
                     </form>
