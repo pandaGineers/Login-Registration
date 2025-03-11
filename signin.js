@@ -1,9 +1,8 @@
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+//import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
 
-// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDkobRtI5zj4W3sPlYKSmErUatgxpsZNgM",
   authDomain: "karukunjo-a1c68.firebaseapp.com",
@@ -14,22 +13,21 @@ const firebaseConfig = {
   measurementId: "G-HZ5MLC6MFR"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 auth.languageCode = 'en';
 
-// Initialize Google Provider
+
 const provider = new GoogleAuthProvider();
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+//provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
-// Initialize Analytics
-const analytics = getAnalytics(app);
 
-// Get Google Sign-In Button
+//const analytics = getAnalytics(app);
+
 const googleLogin = document.getElementById("google-sign-btn");
 
-// Check if button exists before adding event listener
+
 if (googleLogin) {
   googleLogin.addEventListener("click", function () {
     signInWithPopup(auth, provider)
@@ -45,6 +43,5 @@ if (googleLogin) {
 } else {
   console.error("Google Sign-In button not found in HTML.");
 }
-
 
 
