@@ -504,5 +504,18 @@ main.sign-up-mode .carousel {
   background-color: #372012;
 }
 
+.input-wrap1 {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 18px; 
+}
 
+.facebook, .phone {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer; 
+}
 
