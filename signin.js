@@ -34,7 +34,7 @@ if (googleLogin) {
       .then((result) => {
         const user = result.user;
         console.log("User logged in:", user);
-        window.location.href = "../home.html";
+        window.location.href = "home.html";
       })
       .catch((error) => {
         console.error("Error during login:", error.message);
