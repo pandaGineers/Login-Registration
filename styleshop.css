@@ -496,7 +496,7 @@ title a{
     border-radius: 3rem;
     background-color:#e6dbc7 ;
 }
-.products .image{
+.products.box-container .box .image{
     height:10%;
     width:10%
 }
