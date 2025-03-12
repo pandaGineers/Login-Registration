@@ -390,7 +390,7 @@ title a{
 .login-container {
     position: fixed;
     top: 20%;
-    right: -101%; /* Initially hidden */
+    right: -101%; 
     z-index: 1000;
     width: 20rem;
     background: #f0e8e4;
@@ -434,22 +434,59 @@ title a{
     background: #f0e8e4;
     border-radius: 3rem;
 }
+.category-navbar {
+    background-color: #b69677;
+    padding: 10px;
 
-.category.box-container{
-    display: grid;
+   
     
-    grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
-    gap: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin: 2%;
+    border-radius: 3rem;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-header a{
+    align-items: right;
+}
+
+.menu-btn {
+    display: none; 
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.category-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+    transition: 0.3s;
+}
+
+.category-links a:hover {
+    background-color: #bbb;
+}
+.category-links.active {
+    max-height: 300px;
+    opacity: 1;
 
 }
 
-.category a{
-    color: #5e473e;
-}
-.category .box-container .box h3{
-    font-size: 1.7rem;
-    color: #5e473e;
-}
 
 .products .box-container{
     display: grid;
