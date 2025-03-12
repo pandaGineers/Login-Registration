@@ -496,3 +496,7 @@ title a{
     border-radius: 3rem;
     background-color:#e6dbc7 ;
 }
+.products .image{
+    height:20%;
+    width:20%
+}
