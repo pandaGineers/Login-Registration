@@ -496,7 +496,98 @@ title a{
     border-radius: 3rem;
     background-color:#e6dbc7 ;
 }
-.products.box-container .box .image{
-    height:10%;
-    width:10%
+
+.products .box-container .box{
+    position: relative;
+    background: #e6dbc7;
+    overflow: hidden;
+    border-radius: 2rem;
+    border: 0.1rem solid #e6dbc7;
+    height: 35rem; /* Adjust this to fit your design */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+   
+    
+}
+
+.products .box-container .box .image{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.products .box-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    object-position: center; 
+}
+
+.products .box-container .box:hover .image img{
+    transform: scale(1.2);
+  
+
+
+}
+.products .box-container .box:hover .icons{
+   
+    opacity: 1;
+}
+.products .box-container .box .icons{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: rgba(230, 219, 199, 0.7); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10; 
+
+}
+.products .box-container .box .icons a{
+    text-align: center;
+    height: 5rem;
+    line-height: 5rem;
+    width: 5rem;
+    background: #806043; 
+    color: #e6dbc7;
+    border-radius: 50%;
+    font-size: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+}
+.products .box-container .box .icons a:hover{
+    background: #806043;
+    color: #e6dbc7;
+
+}
+.products .box-container .box .content{
+    padding: 1.5rem 2rem;
+}
+.products .box-container .box .content .price{
+    font-size: 1.8rem;
+    color: #945f51;
+
+}
+.products .box-container .box .content h3{
+    font-size: 2rem;
+    color: #945f51;
+    padding: .5rem 0;
+
+}
+.products .box-container .box .content .stars{
+    font-size: 1.8rem;
+
+}
+.products .box-container .box .content .stars i{
+    color: gold;
+}
+.products .box-container .box .content .stars span{
+    color: #b58d7e;
 }
