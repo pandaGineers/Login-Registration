@@ -394,3 +394,43 @@ title a{
     background: #f0e8e4;
     border-radius: 3rem;
 }
+.about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+   
+    align-items: center;
+    gap: 2rem;
+    margin: 2%;
+    border-radius: 3rem;
+    background-color: #e6dbc7;
+}
+.about .image{
+   flex: 1 1 40rem;
+}
+.about .image img{
+    border-radius: 2rem;
+   width : 100%;
+}
+
+.about .content{
+flex: 1 1 40rem;
+
+}
+.about .content span{
+    font-size: 2rem;
+    color: #b58d7e;
+
+}
+.about .content h3{
+    font-size: 2.5rem;
+    color: #5e473e;
+    padding-top: 1rem;
+}
+
+.about .content p{
+    font-size: 1.4rem;
+    color: #b58d7e;
+    padding: 1rem 0;
+    line-height: 2;
+}
