@@ -58,55 +58,18 @@
 
 
     <!-- shopping cart start  -->
-    <div class="shopping-cart">
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product12.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product2.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product6.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product10.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <h3 class="total">Total : <span>560</span> </h3>
-        <a href="#" class="btn">Checkout Cart</a>
+     <div class="shopping-cart">
+        <!-- Cross button to close the cart -->
+        <button id="close-cart" class="close-cart-btn">×</button>
 
-     </div>
+        <div id="cart-items-container">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <h3 class="total">Total: <span id="total-price">0</span> </h3>
+        <button id="update-cart" class="btn">Update Cart</button>
+        <a href="payment.html" id="proceed-to-payment" class="btn">Proceed to Payment</a>
+        <button id="clear-all" class="btn">Clear All</button>
+    </div>
     <!-- shopping cart end  -->
 
 
