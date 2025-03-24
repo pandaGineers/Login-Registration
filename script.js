@@ -60,9 +60,6 @@ function renderCart() {
                     <span class="qnt-label">Qty:</span>
                     <input type="number" value="${item.quantity}" class="quantity" data-id="${item.id}" min="1">
                 </div>
-                
-               
-                <i class="ri-close-line close-icon" data-id="${item.id}"></i>
             </div>
         `;
         cartContainer.appendChild(cartItem);
@@ -73,11 +70,6 @@ function renderCart() {
     const quantityInputs = document.querySelectorAll('.quantity');
     quantityInputs.forEach(input => {
         input.addEventListener('change', updateQuantity);
-    });
-
-    const removeIcons = document.querySelectorAll('.close-icon');
-    removeIcons.forEach(icon => {
-        icon.addEventListener('click', removeItem);
     });
 }
 
@@ -96,13 +88,6 @@ function updateQuantity(e) {
         product.quantity = quantity;
         renderCart();
     }
-}
-
-// Remove item from cart
-function removeItem(e) {
-    const productId = parseInt(e.target.getAttribute('data-id'));
-    cart = cart.filter(item => item.id !== productId);
-    renderCart();
 }
 
 // Clear all items in cart
@@ -138,11 +123,4 @@ cartIcon.onclick = function() {
 // Add scrollbar to cart container
 const cartContainerElement = document.getElementById('cart-items-container');
 cartContainerElement.style.maxHeight = '400px'; 
-cartContainerElement.style.overflowY = 'auto'; 
-
-// Close cart with cross button
-let closeCartBtn = document.getElementById('close-cart');
-closeCartBtn.onclick = function() {
-    cartContainer.classList.remove('active'); 
-    closer.style.display = 'none'; 
-}
+cartContainerElement.style.overflowY = 'auto';
