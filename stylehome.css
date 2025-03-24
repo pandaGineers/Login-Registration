@@ -651,8 +651,8 @@ color:#9e7464;
 
 /* Cart container overall layout */
 .shopping-cart {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 10px;
     right: 0;
     width: 300px;
     background-color: #fff;
@@ -660,13 +660,16 @@ color:#9e7464;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: none;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     padding: 20px;
     z-index: 100;
 }
 
 /* When cart is active (visible) */
 .shopping-cart.active {
+    transform: translateY(0); /* Moves it to its normal position */
+    opacity: 1;
+    visibility: visible;
     display: block;
 }
 
