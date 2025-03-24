@@ -1,20 +1,28 @@
+// Select the necessary elements
 let closer = document.querySelector('#closer');
-
-closer.onclick = () => {
-    closer.style.display = 'none';
-    navbar.classList.remove('active');
-    cart.classList.remove('active');
-}
-
 let navbar = document.querySelector('.navbar');
+let cartContainer = document.querySelector('.shopping-cart');
+let cartBtn = document.querySelector('#cart-btn');
+let closeCartBtn = document.querySelector('#close-cart'); // Ensure this ID exists in HTML
 
+// Toggle Navbar
 document.querySelector('#menu-btn').onclick = () => {
     closer.style.display = "block";
     navbar.classList.toggle('active');
 }
 
-// Initialize an empty cart
-let cart = [];
+// Toggle Cart
+cartBtn.onclick = () => {
+    closer.style.display = "block";
+    cartContainer.classList.toggle('active');
+}
+
+// Close Navbar and Cart when clicking the overlay (closer)
+closer.onclick = () => {
+    closer.style.display = 'none';
+    navbar.classList.remove('active');
+    cartContainer.classList.remove('active');
+}
 
 // Sample product data (replace with actual product data from your store)
 const products = [
@@ -23,6 +31,9 @@ const products = [
     { id: 3, name: "BATI", price: 140, image: "image/product6.jpg" },
     { id: 4, name: "MRITSRIJON", price: 140, image: "image/product5.jpg" }
 ];
+
+// Initialize an empty cart
+let cart = [];
 
 // Add product to cart
 function addProductToCart(productId) {
@@ -35,7 +46,7 @@ function addProductToCart(productId) {
             cart.push({ ...product, quantity: 1 });
         }
         renderCart();
-    }
+}
 }
 
 // Render the cart dynamically
@@ -113,10 +124,7 @@ addProductToCart(3);
 addProductToCart(4); 
 
 // Cart Icon functionality
-let cartIcon = document.getElementById('cart-btn'); 
-let cartContainer = document.querySelector('.shopping-cart'); 
-
-cartIcon.onclick = function() {
+cartBtn.onclick = function() {
     cartContainer.classList.toggle('active'); 
 };
 
@@ -124,3 +132,11 @@ cartIcon.onclick = function() {
 const cartContainerElement = document.getElementById('cart-items-container');
 cartContainerElement.style.maxHeight = '400px'; 
 cartContainerElement.style.overflowY = 'auto';
+
+// Close cart with cross button functionality
+if (closeCartBtn) {
+    closeCartBtn.onclick = function() {
+        cartContainer.classList.remove('active');
+        closer.style.display = 'none'; 
+    }
+}
