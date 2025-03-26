@@ -245,6 +245,156 @@ title a{
     color: #9e7464;
 }
 
+.cart-item {
+    position: relative; /* This allows absolute positioning of the close icon */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    width: 50px; /* Adjust the size of the image as needed */
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover; /* Makes sure the image fits well within the box */
+}
+
+.content {
+    flex-grow: 1; /* Ensures the content section takes up remaining space */
+}
+
+.price {
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.multiply {
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.item-total {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.quantity-container .qnt-label {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.quantity-container input {
+    width: 50px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px; /* Positions the close icon at the top-right corner */
+    cursor: pointer;
+    font-size: 18px;
+    color: rgb(136, 2, 2);
+}
+
+/* Scrollbar for cart container */
+#cart-items-container {
+    padding-top: 0.8px;
+    max-height: 400px; 
+    overflow-y: auto; 
+    padding-right: 10px; 
+    scrollbar-width: thin; 
+    scrollbar-color: #888 #f1f1f1; 
+    margin-top: 30px;
+}
+
+/* Styling for custom scrollbar in Webkit browsers (Chrome, Safari, etc.) */
+#cart-items-container::-webkit-scrollbar {
+    
+    width: 8px; 
+}
+
+#cart-items-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+}
+
+#cart-items-container::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 4px;
+}
+
+#cart-items-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+/* Cart container overall layout */
+.shopping-cart {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 100;
+}
+
+/* When cart is active (visible) */
+.shopping-cart.active {
+    transform: translateY(0); /* Moves it to its normal position */
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+/* Style the close cart button */
+.close-cart-btn {
+    position: absolute;
+    top: 0rem;
+    right: 1rem;
+    font-size: 4rem; 
+    background-color: transparent;
+    border: none;
+    color: #5e473e;
+    cursor: pointer;
+    z-index: 1001; 
+    transition: color 0.3s, transform 0.3s; 
+}
+
+/* Rotate the button on hover */
+.close-cart-btn:hover {
+    color: #9e7464; 
+    transform: rotate(180deg); 
+}
+
+/* Add a rotation effect when the button is clicked */
+.close-cart-btn:active {
+    transform: rotate(360deg); 
+}
 
 
 .footer{
@@ -437,43 +587,51 @@ title a{
 
 
 }
-.products .box-container .box:hover .icons{
-   
+.products .box-container .box:hover .icons {
     opacity: 1;
 }
-.products .box-container .box .icons{
+
+.products .box-container .box .icons {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; 
-    background: rgba(230, 219, 199, 0.7); 
+    height: 100%;
+    background: rgba(230, 219, 199, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    opacity: 0; 
+    opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    z-index: 10; 
-
+    z-index: 10;
 }
-.products .box-container .box .icons a{
-    text-align: center;
+
+.products .box-container .box .icons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 5rem;
-    line-height: 5rem;
     width: 5rem;
-    background: #806043; 
-    color: #e6dbc7;
-    border-radius: 50%;
-    font-size: 2rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-
-}
-.products .box-container .box .icons a:hover{
     background: #806043;
     color: #e6dbc7;
-
+    border: none;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+.products .box-container .box .icons button i {
+    font-size: 2rem;
+}
+
+.products .box-container .box .icons button:hover {
+    background: #5e4730;
+    color: #f5e8d9;
+}
+
 .products .box-container .box .content{
     padding: 1.5rem 2rem;
 }
