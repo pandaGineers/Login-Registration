@@ -1,19 +1,40 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Select the necessary elements
+    let closer = document.querySelector('#closer');
+    let navbar = document.querySelector('.navbar');
     let cartContainer = document.querySelector('.shopping-cart');
     let cartBtn = document.querySelector('#cart-btn');
     let closeCartBtn = document.querySelector('#close-cart'); // Ensure this ID exists in HTML
 
+    // Toggle Navbar
+    document.querySelector('#menu-btn').onclick = () => {
+        closer.style.display = "block";
+        navbar.classList.toggle('active');
+        cartContainer.classList.remove('active'); // Close cart if navbar is toggled
+        closer.style.display = navbar.classList.contains('active') ? 'block' : 'none';
+    }
+
     // Toggle Cart
     cartBtn.onclick = () => {
+        closer.style.display = "block";
         cartContainer.classList.toggle('active');
-    };
+        navbar.classList.remove('active'); // Close navbar if cart is toggled
+        closer.style.display = cartContainer.classList.contains('active') ? 'none' : 'block';
+    }
 
-    // Close Cart when clicking the close button
+    // Close Navbar and Cart when clicking the overlay (closer)
+    closer.onclick = () => {
+        closer.style.display = 'none';
+        navbar.classList.remove('active');
+        cartContainer.classList.remove('active');
+    }
+
+    // Close Cart with cross button functionality
     if (closeCartBtn) {
         closeCartBtn.onclick = function() {
             cartContainer.classList.remove('active');
-        };
+            closer.style.display = 'none'; 
+        }
     }
 
     // Sample product data (replace with actual product data from your store)
@@ -54,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             const cartItem = document.createElement('div');
             cartItem.classList.add('cart-item');
-            cartItem.innerHTML = `
+            cartItem.innerHTML = ` 
                 <img src="${item.image}" alt="${item.name}">
                 <div class="content">
                     <h3>${item.name}</h3>
