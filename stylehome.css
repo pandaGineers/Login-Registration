@@ -203,19 +203,20 @@ title a{
       }
 }
 
-#closer{
+.navbar .ri-close-line{
     position: fixed;
-    top:1.5rem; 
-    right:2rem;
+    top:4rem; 
+    right:4.5rem;
     font-size: 5rem;
     cursor: pointer;
     z-index: 10000;
     color: #5e473e;
     animation: rotate .4s linear .4s backwards;
     display: none;
+    background: none;
 }
 
-#closer:hover {
+.navbar .ri-close-line:hover {
     color: #9e7464;
 }
 
@@ -560,6 +561,25 @@ color:#9e7464;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.cart-item .remove-item {
+    position: absolute;
+    top: 10px; /* Adjusted slightly for better positioning */
+    right: 5px; /* Adjusted for better alignment */
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #983220;
+    font-weight: bold; /* Makes it bolder */
+    font-size: 1.6rem; /* Slightly larger for better visibility */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+.cart-item .remove-item:hover {
+    color: #6b2416; /* Darker red for better hover effect */
+    
+}
+
 .cart-item img {
     width: 50px; /* Adjust the size of the image as needed */
     height: 50px;
@@ -697,5 +717,4 @@ color:#9e7464;
 .close-cart-btn:active {
     transform: rotate(360deg); 
 }
-
 
