@@ -196,19 +196,20 @@ title a{
       }
 }
 
-#closer{
+.navbar .ri-close-line{
     position: fixed;
-    top:1.5rem; 
-    right:2rem;
+    top:4rem; 
+    right:4.5rem;
     font-size: 5rem;
     cursor: pointer;
     z-index: 10000;
     color: #5e473e;
     animation: rotate .4s linear .4s backwards;
     display: none;
+    background: none;
 }
 
-#closer:hover {
+.navbar .ri-close-line:hover {
     color: #9e7464;
 }
 
@@ -656,3 +657,4 @@ title a{
 .products .box-container .box .content .stars span{
     color: #b58d7e;
 }
+
