@@ -185,90 +185,90 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-//payment 
 
+
+
+//payment
 document.addEventListener("DOMContentLoaded", function () {
-    // Handle form submission
-    document.getElementById('paymentForm').addEventListener('submit', async function (e) {
-      e.preventDefault(); // Prevent default form submission
-      
-      // Collect form data
-      const formData = new FormData(this);
-      const formObject = Object.fromEntries(formData.entries());
-  
-      // Prepare data for SSLCommerz payment
-      const data = {
-        ...formObject,
-        store_id: "tkaruk67f22a9723164",
-        store_passwd: "karuk67f22a9723164@ssl",
-        currency: "BDT",
-        tran_id: "SSLCZ_TEST_" + Math.random().toString(36).substring(2, 15),
-        success_url: "https://karukunjo.com/success", // Replace with your actual success URL
-        fail_url: "https://karukunjo.com/fail", // Replace with your actual fail URL
-        cancel_url: "https://karukunjo.com/cancel", // Replace with your actual cancel URL
-  
-        emi_option: "1",
-        emi_max_inst_option: "9",
-        emi_selected_inst: "9",
-  
-        cus_add1: "Dhaka",
-        cus_add2: "Dhaka",
-        cus_city: "Dhaka",
-        cus_state: "Dhaka",
-        cus_postcode: "1000",
-        cus_country: "Bangladesh",
-        cus_fax: "01711111111",
-  
-        ship_name: "testkaruk9n7m",
-        ship_add1: "Dhaka",
-        ship_add2: "Dhaka",
-        ship_city: "Dhaka",
-        ship_state: "Dhaka",
-        ship_postcode: "1000",
-        ship_country: "Bangladesh",
-  
-        value_a: "ref001",
-        value_b: "ref002",
-        value_c: "ref003",
-        value_d: "ref004",
-  
-        cart: JSON.stringify([
-          { product: "DHK TO BRS AC A1", amount: "200.00" },
-          { product: "DHK TO BRS AC A2", amount: "200.00" },
-          { product: "DHK TO BRS AC A3", amount: "200.00" },
-          { product: "DHK TO BRS AC A4", amount: "200.00" }
-        ]),
-        product_amount: "100",
-        vat: "5",
-        discount_amount: "5",
-        convenience_fee: "3"
-      };
-  
-      try {
-        // Send data to SSLCommerz API
-        const res = await fetch("https://sandbox.sslcommerz.com/gwprocess/v3/api.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        });
-  
-        // Parse response
-        const result = await res.json();
-  
-        // Redirect to SSLCommerz Gateway if response contains GatewayPageURL
-        if (result?.GatewayPageURL) {
-          window.location.href = result.GatewayPageURL;
-        } else {
-          alert("Payment initialization failed.");
-          console.error("Response:", result);
-        }
-      } catch (error) {
-        alert("Error during payment initialization.");
-        console.error("Fetch error:", error);
+  document.getElementById('paymentForm').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(this);
+    const formObject = Object.fromEntries(formData.entries());
+
+    // Prepare data for SSLCommerz payment
+    const data = {
+      ...formObject,
+      store_id: "tkaruk67f22a9723164",  // Replace with actual store ID
+      store_passwd: "karuk67f22a9723164@ssl",  // Replace with actual store password
+      currency: "BDT",
+      tran_id: "SSLCZ_TEST_" + Math.random().toString(36).substring(2, 15),
+      success_url: "https://karukunjo.com/success",  // Replace with actual success URL
+      fail_url: "https://karukunjo.com/fail",  // Replace with actual fail URL
+      cancel_url: "https://karukunjo.com/cancel",  // Replace with actual cancel URL
+
+      emi_option: "1",
+      emi_max_inst_option: "9",
+      emi_selected_inst: "9",
+
+      cus_add1: "Dhaka",
+      cus_add2: "Dhaka",
+      cus_city: "Dhaka",
+      cus_state: "Dhaka",
+      cus_postcode: "1000",
+      cus_country: "Bangladesh",
+      cus_fax: "01711111111",
+
+      ship_name: "testkaruk9n7m",
+      ship_add1: "Dhaka",
+      ship_add2: "Dhaka",
+      ship_city: "Dhaka",
+      ship_state: "Dhaka",
+      ship_postcode: "1000",
+      ship_country: "Bangladesh",
+
+      value_a: "ref001",
+      value_b: "ref002",
+      value_c: "ref003",
+      value_d: "ref004",
+
+      cart: JSON.stringify([
+        { product: "DHK TO BRS AC A1", amount: "200.00" },
+        { product: "DHK TO BRS AC A2", amount: "200.00" },
+        { product: "DHK TO BRS AC A3", amount: "200.00" },
+        { product: "DHK TO BRS AC A4", amount: "200.00" }
+      ]),
+      product_amount: "100",
+      vat: "5",
+      discount_amount: "5",
+      convenience_fee: "3"
+    };
+
+    try {
+      console.log("Sending payment request to SSLCommerz...");
+      const res = await fetch("https://sandbox.sslcommerz.com/gwprocess/v3/api.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      console.log("SSLCommerz Response:", result);
+
+      if (result?.GatewayPageURL) {
+        console.log("Redirecting to Gateway Page URL...");
+        window.location.href = result.GatewayPageURL;
+      } else {
+        alert("Payment initialization failed. Response from server:");
+        console.error("SSLCommerz Response:", result);
       }
-    });
+    } catch (error) {
+      alert("Error during payment initialization.");
+      console.error("Fetch error:", error);
+    }
   });
-  
+});
+
 
