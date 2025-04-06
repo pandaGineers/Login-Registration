@@ -189,91 +189,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //payment
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById('paymentForm').addEventListener('submit', async function(e) {
+document.getElementById('paymentForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // 1. Prepare the data (your original style)
-    const formData = new FormData(this);
-    const formObject = Object.fromEntries(formData.entries());
-    
-    const sslData = {
-      ...formObject,
-      store_id: "tkaruk67f22a9723164",
-      store_passwd: "karuk67f22a9723164@ssl",
-      total_amount: "100.00",
-      currency: "BDT",
-      tran_id: "TXN_" + Date.now(),
-      success_url: window.location.origin + "/success.html",
-      fail_url: window.location.origin + "/fail.html",
-      cancel_url: window.location.origin + "/cancel.html",
-      product_name: "Test Product",
-      product_category: "Test Category",
-      product_profile: "general",
-      emi_option: "0",
-      shipping_method: "NO"
-    };
-
-    // 2. Convert to URLSearchParams
-    const formBody = new URLSearchParams();
-    for (const [key, value] of Object.entries(sslData)) {
-      formBody.append(key, value);
-    }
-
+    // 1. Collect form data
+    const formData = new FormData(e.target);
+    const formBody = new URLSearchParams(formData).toString();
+  
     try {
-      // 3. Enhanced fetch request with timeout
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
-      
-      const response = await fetch("https://sandbox.sslcommerz.com/gwprocess/v4/api.php", {
-        method: "POST",
+      // 2. Send to Vercel proxy (replace with your Vercel URL)
+      const response = await fetch('https://your-vercel-app.vercel.app/api/sslcommerz', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: formBody.toString(),
-        signal: controller.signal
+        body: formBody
       });
-      
-      clearTimeout(timeoutId);
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
+  
+      // 3. Handle response
       const result = await response.json();
-      
-      if (!result.GatewayPageURL) {
-        throw new Error(result.message || "No payment URL received");
-      }
-      
-      window.location.href = result.GatewayPageURL;
-      
-    } catch (error) {
-      // 4. Detailed error diagnostics
-      console.error("Full Error Details:", error);
-      
-      let errorMessage = "Payment failed: ";
-      
-      if (error.name === 'AbortError') {
-        errorMessage += "Request timed out (10s) - Check your internet connection";
-      } else if (error.message.includes('Failed to fetch')) {
-        errorMessage += "Network error - Possible causes:\n" +
-                       "1. SSLCommerz API blocked by CORS\n" +
-                       "2. Ad blocker interfering\n" +
-                       "3. Invalid SSL certificate\n" +
-                       "4. Server not responding";
+      if (result.GatewayPageURL) {
+        window.location.href = result.GatewayPageURL; // Redirect to payment page
       } else {
-        errorMessage += error.message;
+        alert(result.message || "Payment failed");
       }
-      
-      alert(errorMessage);
-      
-      // 5. Fallback option
-      if (confirm("Try direct form submission as fallback?")) {
-        this.submit(); // Will only work if you have a backend endpoint
-      }
+    } catch (error) {
+      alert("Error: " + error.message);
     }
   });
-});
 
 
