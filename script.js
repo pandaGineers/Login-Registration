@@ -190,101 +190,88 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //payment
 document.addEventListener("DOMContentLoaded", function() {
-  const paymentForm = document.getElementById('paymentForm');
-
-  paymentForm.addEventListener('submit', async function(e) {
+  document.getElementById('paymentForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
-    // =============================================
-    // 1. PREPARE THE DATA (YOUR ORIGINAL STYLE)
-    // =============================================
+    // 1. Prepare the data (your original style)
     const formData = new FormData(this);
     const formObject = Object.fromEntries(formData.entries());
     
     const sslData = {
-      // Your original fields
       ...formObject,
-      
-      // REQUIRED FIELDS (MUST include these)
       store_id: "tkaruk67f22a9723164",
       store_passwd: "karuk67f22a9723164@ssl",
-      total_amount: "100.00", // Must be > 10 for sandbox
+      total_amount: "100.00",
       currency: "BDT",
-      tran_id: "TXN_" + Math.floor(Math.random() * 1000000000),
-      
-      // URL CONFIG (Use absolute URLs)
-      success_url: "https://yourwebsite.com/success",
-      fail_url: "https://yourwebsite.com/fail", 
-      cancel_url: "https://yourwebsite.com/cancel",
-      
-      // PRODUCT INFO (Required by SSLCommerz)
-      product_name: "Demo Product",
-      product_category: "Demo Category",
+      tran_id: "TXN_" + Date.now(),
+      success_url: window.location.origin + "/success.html",
+      fail_url: window.location.origin + "/fail.html",
+      cancel_url: window.location.origin + "/cancel.html",
+      product_name: "Test Product",
+      product_category: "Test Category",
       product_profile: "general",
-      
-      // DISABLE UNNEEDED FEATURES
       emi_option: "0",
-      shipping_method: "NO",
-      cus_country: "Bangladesh",
-      cus_state: "Dhaka",
-      cus_city: "Dhaka",
-      cus_postcode: "1000"
+      shipping_method: "NO"
     };
 
-    // =============================================
-    // 2. DEBUGGING: CONSOLE LOG THE DATA
-    // =============================================
-    console.log("Final Data Being Sent:", sslData);
-    
-    // =============================================
-    // 3. CONVERT TO FORM DATA (MOST CRITICAL STEP)
-    // =============================================
+    // 2. Convert to URLSearchParams
     const formBody = new URLSearchParams();
     for (const [key, value] of Object.entries(sslData)) {
       formBody.append(key, value);
     }
-    console.log("Form Body:", formBody.toString());
 
     try {
-      // =============================================
-      // 4. SEND REQUEST TO SSLCOMMERZ
-      // =============================================
+      // 3. Enhanced fetch request with timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+      
       const response = await fetch("https://sandbox.sslcommerz.com/gwprocess/v4/api.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: formBody.toString()
+        body: formBody.toString(),
+        signal: controller.signal
       });
       
-      // =============================================
-      // 5. HANDLE THE RESPONSE
-      // =============================================
-      const result = await response.json();
-      console.log("SSLCommerz Response:", result);
-      
-      if (!result.GatewayPageURL) {
-        throw new Error(
-          result.message || 
-          "No payment URL received. Check your credentials and parameters."
-        );
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
       
-      // =============================================
-      // 6. REDIRECT TO PAYMENT GATEWAY
-      // =============================================
+      const result = await response.json();
+      
+      if (!result.GatewayPageURL) {
+        throw new Error(result.message || "No payment URL received");
+      }
+      
       window.location.href = result.GatewayPageURL;
       
     } catch (error) {
-      // =============================================
-      // 7. ERROR HANDLING (USER-FRIENDLY MESSAGES)
-      // =============================================
+      // 4. Detailed error diagnostics
       console.error("Full Error Details:", error);
       
-      alert(`🚨 Payment Failed!\n\nReason: ${error.message}\n\n` + 
-            "1. Check browser console (F12) for details\n" +
-            "2. Verify your SSLCommerz credentials\n" +
-            "3. Ensure all required fields are included");
+      let errorMessage = "Payment failed: ";
+      
+      if (error.name === 'AbortError') {
+        errorMessage += "Request timed out (10s) - Check your internet connection";
+      } else if (error.message.includes('Failed to fetch')) {
+        errorMessage += "Network error - Possible causes:\n" +
+                       "1. SSLCommerz API blocked by CORS\n" +
+                       "2. Ad blocker interfering\n" +
+                       "3. Invalid SSL certificate\n" +
+                       "4. Server not responding";
+      } else {
+        errorMessage += error.message;
+      }
+      
+      alert(errorMessage);
+      
+      // 5. Fallback option
+      if (confirm("Try direct form submission as fallback?")) {
+        this.submit(); // Will only work if you have a backend endpoint
+      }
     }
   });
 });
