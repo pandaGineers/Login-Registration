@@ -23,9 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
             total += itemTotal;
 
             const itemHTML = `
-                <div class="cart-item">
+                <div class="cart-item" id="item-${index}">
                     <img src="${item.image}" alt="${item.name}" width="80" height="80">
                     <div class="item-info">
+                        <button class="delete-item" data-index="${index}">&times;</button> <!-- Cross button -->
                         <h4>${item.name}</h4>
                         <p>Price: ${item.price} BDT</p>
                         <!-- Quantity Section with buttons -->
@@ -66,6 +67,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 item.quantity++;  // Increase quantity
                 document.getElementById(`quantity-${index}`).textContent = item.quantity;  // Update display
                 updateTotalPrice(cart);  // Update total price
+            });
+        });
+
+        // Handle delete item button
+        const deleteButtons = document.querySelectorAll('.delete-item');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const index = button.getAttribute('data-index');
+                // Remove item from cart
+                cart.splice(index, 1);
+                // Update the cart view by removing the item HTML
+                const itemElement = document.getElementById(`item-${index}`);
+                itemElement.remove();
+                // Recalculate total price after deletion
+                updateTotalPrice(cart);
             });
         });
 
