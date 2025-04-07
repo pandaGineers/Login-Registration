@@ -6,7 +6,6 @@
   <title>Checkout Page</title>
   <link rel="stylesheet" href="cart.css" />
   <link rel="stylesheet" href="checkout.css" />
-  
 </head>
 <body>
 
@@ -26,7 +25,11 @@
       <div class="checkout-summary">
         <h3 class="cart-total">Total:<span id="total-price">0</span> BDT</h3>
         <button id="update-cart" class="btn">Update Cart</button>
-        
+
+        <!-- New text and link below the Update Cart button -->
+        <p class="continue-shopping">
+          Not done yet? <a href="shop.html" id="continue-shopping-link">Continue Shopping</a>
+        </p>
       </div>
     </div>
   </div>
@@ -50,13 +53,17 @@
       <label for="postal">Postal Code</label>
       <input type="text" id="postal" name="postal" placeholder="Postal Code" required />
 
+      <!-- New Textarea box for order notes -->
+      <label for="order-notes">Additional Instructions (Optional)</label>
+      <textarea id="order-notes" name="order-notes" placeholder="Any special instructions?" rows="4" required></textarea>
+
       <button type="submit" class="checkout-btn">Proceed to Payment</button>
     </form>
   </div>
 
 </div>
 
-  <script src="checkout.js"></script>
+<script src="checkout.js"></script>
 
 </body>
 </html>
