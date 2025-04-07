@@ -84,7 +84,7 @@ body {
 
 /* Total (outside cart item) */
 .cart-total {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   color: #2d3436;
   text-align: center;
@@ -94,7 +94,7 @@ body {
 }
 
 #total-price {
-  color: #00b894;
+  color: #2d3436;
   font-weight: bold;
   display: inline-block;
   margin-left: 10px;
@@ -168,7 +168,8 @@ input[type="tel"] {
 }
 
 .checkout-btn {
-  width: 100%;
+  display: block;
+  width: 80%;
   padding: 12px;
   background-color: #4CAF50;
   color: white;
@@ -177,6 +178,9 @@ input[type="tel"] {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-align: center;
+  margin: 0 auto; 
+  
 }
 
 .checkout-btn:hover {
@@ -213,4 +217,55 @@ input[type="tel"] {
   font-size: 16px;
   font-weight: bold;
   padding: 0 5px;
+}
+
+/* Cross Button (Delete) */
+.delete-item {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ff0000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-item:hover {
+  color: #d63031;
+}
+
+/* Textarea Styles */
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: vertical; /* Allow users to resize the height */
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  outline-color: #000000;
+  border-color: #4CAF50;
+}
+
+.continue-shopping {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.continue-shopping a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.continue-shopping a:hover {
+  color: #388e3c;
 }
