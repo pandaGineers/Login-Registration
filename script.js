@@ -219,8 +219,12 @@ document.getElementById('paymentForm').addEventListener('submit', async (e) => {
   });
 
 //category navbar
-document.querySelector('.menu-btn').addEventListener('click', function () {
-    document.querySelector('.category-links').classList.toggle('active');
-});
+document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.querySelector('.menu-btn');
+        const categoryLinks = document.querySelector('.category-links');
 
+        menuBtn.addEventListener('click', function () {
+            categoryLinks.classList.toggle('active');
+        });
+    });
 
