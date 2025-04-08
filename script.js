@@ -218,4 +218,9 @@ document.getElementById('paymentForm').addEventListener('submit', async (e) => {
     }
   });
 
+//category navbar
+document.querySelector('.menu-btn').addEventListener('click', function () {
+    document.querySelector('.category-links').classList.toggle('active');
+});
+
 
