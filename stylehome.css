@@ -12,14 +12,14 @@
     transition: .2s linear;
   }
 
-  body{
-    background-color: #faf7f6;
-  }
+body{
+    background-color: #fff3ef;
+}
 
-  html{
+html{
     font-size: 62.5%;
     overflow-x: hidden;
-  }
+}
     
   
 html::-webkit-scrollbar{
@@ -31,14 +31,14 @@ html::-webkit-scrollbar-track{
 }
   
 html::-webkit-scrollbar-thumb{
-    background: #b58d7e;
+    background: #886d63;
 }
 section{
     padding:3rem 9%;
   }
   
 .heading{
-    background: #e1cec7;
+    background: #d9ccc7;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -115,7 +115,7 @@ title a{
     left:0; 
     right:0;
     z-index: 100;
-    background: #f0e8e4;
+    background: #c6b2a0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -351,7 +351,7 @@ title a{
 .footer{
     margin: 2%;
     border-radius: 3rem;
-    background: #f0e8e4;
+    background: #e1cebcdf;
 }  
 
 .footer .box-container {
@@ -399,8 +399,8 @@ title a{
 .credit {
     text-align: center;
     font-size: 2rem;
-    color: #5e473e;
-    background: #f0e8e4;
+    color: #58433a;
+    background: #c6b2a0;
     border-radius: 3rem;
 }
 
@@ -431,7 +431,7 @@ title a{
     position: relative;
     margin: 2%;
     border-radius: 3rem;
-    background-color: #f0e8e4;
+    background-color: #e1cebcdf;
 }
 
 .home .slides-container .slide {
@@ -452,7 +452,7 @@ title a{
 }
 .home .slides-container .slide .content span{
     font-size: 2.5rem;
-    color: #b58d7e;
+    color: #876d63;
 }
 .home .slides-container .slide .content h3{
     font-size: 6rem;
@@ -475,8 +475,6 @@ title a{
     
 }
 
-
-
 .home #slide-next,
 .home #slide-prev{
 
@@ -488,15 +486,15 @@ title a{
     line-height: 5rem;
     font-size: 3rem;
     text-align: center;
-    color: #845f51;
-    background: #e1cec7;
+    color: #f0e8e4;
+    background: #886d63;
     cursor: pointer;
     border-radius: 50%
 }
 .home #slide-next:hover,
 .home #slide-prev:hover{
-    background: #845f51;
-    color: #e1cec7;
+    background: #f0e8e4;
+    color: #886d63;
 }
 .home #slide-next{
     right: 2rem;
@@ -537,14 +535,12 @@ title a{
 }
 .banner-container.banner.content.span{
     font-size: 1.7rem;
-        color:#b58d7e;
+    color:#b58d7e;
 }
 .banner-container.banner.content.h3{
-
-
-padding-top: .5rem;
-font-size: 2.2rem;
-color:#9e7464;
+    padding-top: .5rem;
+    font-size: 2.2rem;
+    color:#9e7464;
 }
 
 /* Cart Item Styles */
@@ -555,9 +551,9 @@ color:#9e7464;
     justify-content: space-between;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #907d7d;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #f9f8f5;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -589,18 +585,20 @@ color:#9e7464;
 
 .content {
     flex-grow: 1; /* Ensures the content section takes up remaining space */
+    color: #4e3b34;
 }
 
 .price {
     display: block;
     margin: 5px 0;
     font-size: 14px;
-    color: #333;
+    color: #4e3b34;
 }
 
 .multiply {
     font-size: 14px;
     margin: 0 5px;
+    
 }
 
 .item-total {
@@ -646,8 +644,9 @@ color:#9e7464;
     overflow-y: auto; 
     padding-right: 10px; 
     scrollbar-width: thin; 
-    scrollbar-color: #888 #f1f1f1; 
+    scrollbar-color: #888 #fffafa; 
     margin-top: 30px;
+    
 }
 
 /* Styling for custom scrollbar in Webkit browsers (Chrome, Safari, etc.) */
@@ -675,8 +674,8 @@ color:#9e7464;
     top: 10px;
     right: 0;
     width: 300px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #f0e8e4;
+    border: 1px solid #b09a90;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: none;
