@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     // Select the necessary elements
     let closer = document.querySelector('#closer');
@@ -6,6 +7,22 @@ document.addEventListener('DOMContentLoaded', function () {
     let cartBtn = document.querySelector('#cart-btn');
     let closeCartBtn = document.querySelector('#close-cart'); // Ensure this ID exists in HTML
 
+    
+
+    //checkout
+    
+    document.getElementById("proceed-to-payment").addEventListener("click", function (e) {
+        e.preventDefault(); // prevent default <a> behavior
+    
+        if (cart.length > 0) {
+            const cartData = encodeURIComponent(JSON.stringify(cart));
+            window.location.href = `checkout.html?cart=${cartData}`;
+        } else {
+            alert("Your cart is empty!");
+        }
+    });
+    
+    
     // Toggle Navbar
     document.querySelector('#menu-btn').onclick = () => {
         closer.style.display = "block";
@@ -176,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartContainerElement = document.getElementById('cart-items-container');
     cartContainerElement.style.maxHeight = '400px'; 
     cartContainerElement.style.overflowY = 'auto';
+    cartContainerElement.style.overflowX = 'hidden'; 
 
     // Attach event listener for updating quantity (delegation)
     document.getElementById('cart-items-container').addEventListener('input', function(e) {
@@ -186,45 +204,28 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+let slides = document.querySelectorAll(".slide"); //home slider part
+let currentIndex = 0;
 
-
-//payment
-document.getElementById('paymentForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // 1. Collect form data
-    const formData = new FormData(e.target);
-    const formBody = new URLSearchParams(formData).toString();
-  
-    try {
-      // 2. Send to Vercel proxy (replace with your Vercel URL)
-      const response = await fetch('https://your-vercel-app.vercel.app/api/sslcommerz', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formBody
-      });
-  
-      // 3. Handle response
-      const result = await response.json();
-      if (result.GatewayPageURL) {
-        window.location.href = result.GatewayPageURL; // Redirect to payment page
-      } else {
-        alert(result.message || "Payment failed");
-      }
-    } catch (error) {
-      alert("Error: " + error.message);
-    }
-  });
-
-//category navbar
-document.addEventListener("DOMContentLoaded", function () {
-        const menuBtn = document.querySelector('.menu-btn');
-        const categoryLinks = document.querySelector('.category-links');
-
-        menuBtn.addEventListener('click', function () {
-            categoryLinks.classList.toggle('active');
-        });
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        slide.style.display = i === index ? "flex" : "none"; 
     });
+}
 
+
+function next() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+function prev() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
+
+showSlide(currentIndex);
+
+document.querySelector(".next-btn").addEventListener("click", next);
+document.querySelector(".prev-btn").addEventListener("click", prev);
