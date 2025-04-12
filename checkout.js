@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const cartContainer = document.getElementById('cart-items-container');
     const totalPriceElement = document.getElementById('total-price');
+    const paymentForm = document.getElementById('payment-form');
+    const updateCartButton = document.getElementById('update-cart');  // Get the Update Cart button
 
     if (!cartData) {
         cartContainer.innerHTML = '<p>Your cart is empty.</p>';
@@ -85,35 +87,85 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
+        // Handle form submission (redirect to payment.php using AJAX)
+        if (paymentForm) {
+            paymentForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Validate checkout form fields
+                const name = document.getElementById('name').value;
+                const address = document.getElementById('address').value;
+                const phone = document.getElementById('phone').value;
+                const city = document.getElementById('city').value;
+                const postal = document.getElementById('postal').value;
+
+                // Array to store unfilled fields
+                const requiredFields = [
+                    { id: 'name', value: name },
+                    { id: 'address', value: address },
+                    { id: 'phone', value: phone },
+                    { id: 'city', value: city },
+                    { id: 'postal', value: postal }
+                ];
+
+                let allFieldsFilled = true;
+                let firstUnfilledField = null; // Store the first unfilled field
+
+                // Loop over each field and check if it's empty
+                requiredFields.forEach(field => {
+                    const fieldElement = document.getElementById(field.id);
+                    if (!field.value.trim()) {
+                        allFieldsFilled = false;
+                        fieldElement.classList.add('error');  // Add error class to highlight unfilled field
+                        if (!firstUnfilledField) {
+                            firstUnfilledField = fieldElement;  // Set the first unfilled field
+                        }
+                    } else {
+                        fieldElement.classList.remove('error');  // Remove error class if the field is filled
+                    }
+
+                    // Add event listener to remove red border when the user starts typing
+                    fieldElement.addEventListener('input', function () {
+                        if (fieldElement.value.trim()) {
+                            fieldElement.classList.remove('error');  // Remove red border once typing begins
+                        }
+                    });
+                });
+
+                // If not all fields are filled, prevent form submission
+                if (!allFieldsFilled) {
+                    firstUnfilledField.focus(); // Focus on the first unfilled field
+                    return; // Prevent form submission if any field is empty
+                }
+
+                // Log to make sure data is captured correctly
+                console.log('Name:', name);
+                console.log('Address:', address);
+                console.log('Phone:', phone);
+                console.log('City:', city);
+                console.log('Postal Code:', postal);
+
+                const updatedTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+                const cartDataString = JSON.stringify(cart);
+                const actionURL = `http://localhost/payment.php?cart=${encodeURIComponent(cartDataString)}&Total_amount=${Math.round(updatedTotal)}&cus_name=${encodeURIComponent(name)}&cus_add1=${encodeURIComponent(address)}&cus_city=${encodeURIComponent(city)}&cus_phone=${encodeURIComponent(phone)}&cus_postal=${encodeURIComponent(postal)}`;
+
+                // Redirect to the payment page with added query parameters
+                window.location.href = actionURL;
+            });
+        }
+
+        // Handle Update Cart button click
+        if (updateCartButton) {
+            updateCartButton.addEventListener('click', function () {
+                // Alert the user that the cart has been updated
+                alert("Cart successfully updated!");
+            });
+        }
+
     } catch (err) {
         cartContainer.innerHTML = '<p>Error loading cart data.</p>';
         console.error('Cart parse error:', err);
-    }
-
-    // Optional: Handle form submission
-    const checkoutForm = document.getElementById('checkout-form');
-    if (checkoutForm) {
-        checkoutForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Order placed! Thank you for shopping with us.');
-        });
-    }
-
-    // Optional: Clear cart
-    const clearAllBtn = document.getElementById('clear-all');
-    if (clearAllBtn) {
-        clearAllBtn.addEventListener('click', function () {
-            cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-            totalPriceElement.textContent = '0';
-        });
-    }
-
-    // Optional: Update cart button logic
-    const updateCartBtn = document.getElementById('update-cart');
-    if (updateCartBtn) {
-        updateCartBtn.addEventListener('click', function () {
-            alert('Cart updated.');
-        });
     }
 
     // Function to update the total price after quantity change
