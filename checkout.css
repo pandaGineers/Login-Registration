@@ -1,7 +1,7 @@
 /* ===== Global Body ===== */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #fefaf9;
   padding: 30px;
   margin: 0;
   display: flex;
@@ -24,8 +24,8 @@ body {
 .shopping-cart {
   margin-top: 18px;
   width: 48%;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #e5ddd5;
+  border: 1px solid #d2c2bd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -38,9 +38,9 @@ body {
   align-items: center;
   margin-bottom: 12px;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #c1c1c1;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #f4f4f1;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
@@ -57,6 +57,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 50%;
+  color: #5e473e;
 }
 
 .item-info h4 {
@@ -64,6 +65,7 @@ body {
   font-size: 16px;
   color: #2d3436;
   margin-bottom: 10px;
+  color: #5e473e;
   
 }
 
@@ -71,7 +73,7 @@ body {
 .item-price {
   margin-top: 10px;
   font-size: 15px;
-  color: #0984e3;
+  color: #dcdfe1;
   font-weight: 500;
 }
 
@@ -79,14 +81,14 @@ body {
 .item-quantity {
 
   font-size: 14px;
-  color: #636e72;
+  color: #5e473e;
 }
 
 /* Total (outside cart item) */
 .cart-total {
   font-size: 22px;
   font-weight: bold;
-  color: #2d3436;
+  color: #5e473e;
   text-align: center;
   margin-top: 20px;
   
@@ -94,7 +96,7 @@ body {
 }
 
 #total-price {
-  color: #2d3436;
+  color: #5e473e;
   font-weight: bold;
   display: inline-block;
   margin-left: 10px;
@@ -109,7 +111,7 @@ body {
   overflow-y: auto;
   padding-right: 10px;
   scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
+  scrollbar-color:  #888 #fffafa;
   margin-top: 30px;
 }
 
@@ -119,24 +121,27 @@ body {
   width: 80%;
   padding: 10px;
   margin: 10px auto;
-  background-color: #4caf50;
+  background: linear-gradient(135deg, #b58d7e, #845f51);
+  letter-spacing: 1px;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
-  transition: background-color 0.3s ease;
+  transition:  0.3s ease;
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background:linear-gradient(135deg, #945f51, #b58d7e);
+  cursor: pointer;
 }
 
 /* ===== Checkout Form Styles ===== */
 .checkout-container {
   width: 55%;
-  background-color: #fff;
+  background-color: #e5ddd5;
+  border: 1px solid #d2c2bd;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -149,12 +154,14 @@ body {
 h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: #5e473e;
 }
 
 label {
   display: block;
   margin-bottom: 6px;
   font-weight: bold;
+  color: #5e473e;
 }
 
 input[type="text"],
@@ -162,29 +169,37 @@ input[type="tel"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  background-color: #f4f4f1;
+  border: 1px solid #c1c1c1;
   border-radius: 5px;
   box-sizing: border-box;
+  color: #5e473e;
+}
+input[type="text"],
+input[type="tel"]:focus {
+  outline-color: #614c43e4 ;
 }
 
 .checkout-btn {
   display: block;
   width: 80%;
   padding: 12px;
-  background-color: #4CAF50;
+  background: linear-gradient(135deg, #b58d7e, #845f51);
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
   text-align: center;
   margin: 0 auto; 
+  letter-spacing: 1px;
   
 }
 
 .checkout-btn:hover {
-  background-color: #45a049;
+  background:linear-gradient(135deg, #945f51, #b58d7e);
+  cursor: pointer;
 }
 
 .quantity-section {
@@ -202,8 +217,8 @@ input[type="tel"] {
 
 .quantity-section button {
   padding: 5px 10px;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
+  background-color: #dfdad8;
+  border: 1px solid #5e473e;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
@@ -227,7 +242,8 @@ input[type="tel"] {
   background: none;
   border: none;
   font-size: 20px;
-  color: #ff0000;
+  color: #983220;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -246,10 +262,12 @@ textarea {
   resize: vertical; /* Allow users to resize the height */
   margin-bottom: 15px;
   box-sizing: border-box;
+  background-color: #f4f4f1;
+  color: #5e473e;
 }
 
 textarea:focus {
-  outline-color: #000000;
+  outline-color: #614c43e4;
   border-color: #4CAF50;
 }
 
@@ -257,15 +275,16 @@ textarea:focus {
   font-size: 16px;
   text-align: center;
   margin-top: 10px;
+  color: #513f38;
 }
 
 .continue-shopping a {
-  color: #4CAF50;
+  color: #a08208;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.continue-shopping a:hover {
-  color: #388e3c;
+input.error, textarea.error {
+  border: 2px solid rgba(192, 6, 6, 0.599);
 }
