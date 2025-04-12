@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="stylehome.css">
     <link rel="stylesheet" href="styleshop.css">
     <link href="index.html">
 
@@ -110,18 +109,6 @@
 
      </div>
     <!-- shopping cart end  -->
-     <div class="shopping-cart">
-        <!-- Cross button to close the cart -->
-        <button id="close-cart" class="close-cart-btn">×</button>
-
-        <div id="cart-items-container">
-            <!-- Cart items will be dynamically inserted here -->
-        </div>
-        <h3 class="total">Total: <span id="total-price">0</span> </h3>
-        <button id="update-cart" class="btn">Update Cart</button>
-        <a href="payment.html" id="proceed-to-payment" class="btn">Proceed to Payment</a>
-        <button id="clear-all" class="btn">Clear All</button>
-    </div>
 
 
     <!-- login form start  -->
@@ -143,16 +130,510 @@
         <div class="box-container">
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <button class="icon-btn">
+                        <i class="ri-shopping-cart-line"></i>
+                    </button>
+                    <button class="icon-btn">
+                        <i class="ri-heart-line"></i>
+                    </button><!DOCTYPE html>
+                    <html lang="en">
+                    
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Jute</title>
+                    
+                        <!-- remix icon cdn link  -->
+                        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+                    
+                        <!-- font awesome cdn link  -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                    
+                        <!-- custom css file link  -->
+                        <link rel="stylesheet" href="stylehome.css">
+                        <link rel="stylesheet" href="styleshop.css">
+                        <link href="index.html">
+                    
+                    </head>
+                    
+                    <body>
+                    
+                        <!-- header section starts  -->
+                        <header class="header">
+                            <a href="shop.html" class="logo"><i class="ri-store-2-line">Karukunjo</i>
+                            </a>
+                            <form action="#" class="search-form">
+                                <input type="search" placeholder="search here" id="search-box">
+                                <label for="search-box" class="ri-search-line"></label>
+                            </form>
+                    
+                            <div class="icons">
+                                <div id="menu-btn" class="ri-menu-line"></div>
+                                <div id="search-btn" class="ri-search-line"></div>
+                                <div id="cart-btn" class="ri-shopping-cart-line"></div>
+                                <div id="login-btn" class="ri-user-line"></div>
+                            </div>
+                    
+                         </header>
+                        <!-- header section ends  -->
+                    
+                    
+                        <!-- closer btn  -->
+                    
+                        <div id="closer" class="ri-close-line"></div>
+                        <!-- navbar start  -->
+                        <div class="navbar">
+                            <a href="home.html">Home</a>
+                            <a href="shop.html">Shop</a>
+                            <a href="about.html">About</a>
+                            <a href="team.html">Team</a>
+                            <a href="blog.html">Blog</a>
+                            <a href="contact.html">Contact</a>
+                    
+                    
+                         </div>
+                        <!-- navbar end  -->
+                    
+                    
+                        <!-- shopping cart start  -->
+                        <div class="shopping-cart">
+                            <div class="box">
+                                <i class="ri-close-line close-icon"></i>
+                                <img src="./image/product12.jpg" alt="">
+                                <div class="content">
+                                    <h3>modern furniture</h3>
+                                    <span class="quantity">1</span>
+                                    <span class="multiply">x</span>
+                                    <span class="price">140</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="box">
+                                <i class="ri-close-line close-icon"></i>
+                                <img src="./image/product2.jpg" alt="">
+                                <div class="content">
+                                    <h3>modern furniture</h3>
+                                    <span class="quantity">1</span>
+                                    <span class="multiply">x</span>
+                                    <span class="price">140</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="box">
+                                <i class="ri-close-line close-icon"></i>
+                                <img src="./image/product6.jpg" alt="">
+                                <div class="content">
+                                    <h3>modern furniture</h3>
+                                    <span class="quantity">1</span>
+                                    <span class="multiply">x</span>
+                                    <span class="price">140</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="box">
+                                <i class="ri-close-line close-icon"></i>
+                                <img src="./image/product10.jpg" alt="">
+                                <div class="content">
+                                    <h3>modern furniture</h3>
+                                    <span class="quantity">1</span>
+                                    <span class="multiply">x</span>
+                                    <span class="price">140</span>
+                                    
+                                </div>
+                            </div>
+                            <h3 class="total">Total : <span>560</span> </h3>
+                            <a href="#" class="btn">Checkout Cart</a>
+                    
+                         </div>
+                        <!-- shopping cart end  -->
+                         <div class="shopping-cart">
+                            <!-- Cross button to close the cart -->
+                            <button id="close-cart" class="close-cart-btn">×</button>
+                    
+                            <div id="cart-items-container">
+                                <!-- Cart items will be dynamically inserted here -->
+                            </div>
+                            <h3 class="total">Total: <span id="total-price">0</span> </h3>
+                            <button id="update-cart" class="btn">Update Cart</button>
+                            <a href="payment.html" id="proceed-to-payment" class="btn">Proceed to Payment</a>
+                            <button id="clear-all" class="btn">Clear All</button>
+                        </div>
+                    
+                    
+                        <!-- login form start  -->
+                        <div class="login-container" id="login-container">
+                            <a href="index.html" class="login-button">Login Now</a>
+                        </div>
+                        <!-- login form end  -->
+                    
+                    
+                        <!-- heading section start -->
+                    
+                        <section class="heading">
+                            <h3>Our Shop</h3>
+                            <p><a href="home.html">Home</a> / <span>Shop</span></p>
+                        </section>
+                        <section class="products">
+                    
+                            <h1 class="title"><span>Our Products</span> </h1>
+                            <div class="box-container">
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="109"
+                                                data-name="Beige Printed Jute Runner"
+                                                data-price="140"
+                                                data-image="./image/jute-Beige_Printed_Jute_Runner-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/jute-Beige_Printed_Jute_Runner-removebg-preview.png" alt="Beige Printed Jute Runner">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Beige Printed Jute Runner</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="110"
+                                                data-name="Doll House Jute Rug and Plant Holder"
+                                                data-price="140"
+                                                data-image="./image/Doll_House_Jute_Rug___Plant_Holder-removebg-preview-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Doll_House_Jute_Rug___Plant_Holder-removebg-preview-removebg-preview.png" alt="Doll House Jute Rug and Plant Holder">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Doll House Jute Rug and Plant Holder</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="111"
+                                                data-name="Doll House Jute Rugs"
+                                                data-price="140"
+                                                data-image="./image/Doll_House_Jute_Rugs-removebg-preview-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Doll_House_Jute_Rugs-removebg-preview-removebg-preview.png" alt="Doll House Jute Rugs">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Doll House Jute Rugs</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="112"
+                                                data-name="Jute Embroidered Photo Frame"
+                                                data-price="140"
+                                                data-image="./image/Jute_Embroidered_Photo_Frame_-_Big-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Jute_Embroidered_Photo_Frame_-_Big-removebg-preview.png" alt="Jute Embroidered Photo Frame">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Jute Embroidered Photo Frame</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="113"
+                                                data-name="Jute Photo Frame"
+                                                data-price="140"
+                                                data-image="./image/Jute_Photo_Frame-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Jute_Photo_Frame-removebg-preview.png" alt="Jute Photo Frame">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Jute Photo Frame</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="114"
+                                                data-name="Jute Toy Storage"
+                                                data-price="140"
+                                                data-image="./image/Jute_Toy_Storage-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Jute_Toy_Storage-removebg-preview.png" alt="Jute Toy Storage">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Jute Toy Storage</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="115"
+                                                data-name="Magenta Jute Toy Box"
+                                                data-price="140"
+                                                data-image="./image/Magenta_Jute_Toy_Box-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Magenta_Jute_Toy_Box-removebg-preview.png" alt="Magenta Jute Toy Box">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Magenta Jute Toy Box</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="116"
+                                                data-name="Multicolour Brush Painted Jute Ball Hanging"
+                                                data-price="140"
+                                                data-image="./image/Multicolour_Brush_Painted_Recycle_Handmade-Jute_Ball_Hanging-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Multicolour_Brush_Painted_Recycle_Handmade-Jute_Ball_Hanging-removebg-preview.png" alt="Multicolour Brush Painted Jute Ball Hanging">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Multicolour Brush Painted Jute Ball Hanging</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="117"
+                                                data-name="Natural Jute Coaster"
+                                                data-price="140"
+                                                data-image="./image/Natural_Jute_Coaster-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Natural_Jute_Coaster-removebg-preview.png" alt="Natural Jute Coaster">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Natural Jute Coaster</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="box">
+                                    <div class="icons">
+                                        <button class="add-to-cart"
+                                                data-id="118"
+                                                data-name="Red Printed Jute Runner"
+                                                data-price="140"
+                                                data-image="./image/Red_Printed_Jute_Runner-removebg-preview.png">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </button>
+                                        <button><i class="ri-heart-line"></i></button>
+                                        <button><i class="ri-eye-line"></i></button>
+                                    </div>
+                                    <div class="image">
+                                        <img src="./image/Red_Printed_Jute_Runner-removebg-preview.png" alt="Red Printed Jute Runner">
+                                    </div>
+                                    <div class="content">
+                                        <div class="price">140</div>
+                                        <h3>Red Printed Jute Runner</h3>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+ 
+                            </div>
+                        </section>
+                        <!-- products section end -->
+                    
+                    
+                    
+                    
+                    
+                    
+                        <!-- footer section start  -->
+                        <section class="footer">
+                            <div class="box-container">
+                                <div class="box">
+                                    <h3>quick links</h3>
+                                    <a href="home.html"><i class="ri-arrow-right-line"></i>Home</a>
+                                    <a href="shop.html"><i class="ri-arrow-right-line"></i>Shop</a>
+                                    <a href="about.html"><i class="ri-arrow-right-line"></i>About</a>
+                                    <a href="team.html"><i class="ri-arrow-right-line"></i>Team</a>
+                                    <a href="blog.html"><i class="ri-arrow-right-line"></i>Blog</a>
+                                    <a href="contact.html"><i class="ri-arrow-right-line"></i>Contact</a>
+                                </div>
+                    
+                                <div class="box">
+                                    <h3>extra links</h3>
+                                    <a href="#"><i class="ri-arrow-right-line"></i>My Order</a>
+                                    <a href="#"><i class="ri-arrow-right-line"></i>My Wishlist</a>
+                                    <a href="#"><i class="ri-arrow-right-line"></i>My Account</a>
+                                    <a href="#"><i class="ri-arrow-right-line"></i>My Favorite</a>
+                                    <a href="#"><i class="ri-arrow-right-line"></i>Terms of Users</a>
+                                    
+                                </div>
+                                <div class="box">
+                                    <h3>extra links</h3>
+                                    <a href="#"><i class="ri-facebook-fill"></i>Facebook</a>
+                                    <a href="#"><i class="ri-instagram-fill"></i>Instagram</a>
+                                   
+                                    
+                                </div>
+                                
+                            </div>
+                    
+                    
+                         </section> 
+                         <section class="credit">
+                            created by pandaginners | all rights reserved!
+                    
+                         </section>
+                        <!-- footer section end  -->
+                    
+                        <!-- custom js file link  -->
+                        <script src="script.js"></script>
+                    
+                    </body>
+                    
+                    </html>
+                    <button class="icon-btn">
+                        <i class="ri-eye-line"></i>
+                    </button>
                 </div>
+                
                 <div class="image">
-                    <img src="./image/jute-Beige_Printed_Jute_Runner-removebg-preview.png" alt="">
+                    <img src="./image/ceramic-Black-red_Ceramic_Cup_Saucer-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>jute-Beige_Printed_Jute_Runner</h3>
+                    <h3>Ceramic Cup</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -164,20 +645,18 @@
                 </div>
 
             </div>
-           
-           
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Doll_House_Jute_Rug___Plant_Holder-removebg-preview-removebg-preview.png" alt="">
+                    <img src="./image/brass-Brass_lamp_Base-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Doll_House_Jute_Rug___Plant_Holder</h3>
+                    <h3>Brass_lamp_Base</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -191,16 +670,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Doll_House_Jute_Rugs-removebg-preview-removebg-preview.png" alt="">
+                    <img src="./image/clay-Clay_Glass-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Doll_House_Jute_Rugs</h3>
+                    <h3>Clay Glass</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -214,16 +693,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Jute_Embroidered_Photo_Frame_-_Big-removebg-preview.png" alt="">
+                    <img src="./image/clay-Clay_Deep_Curve_Round_Curry_Bowl_With_Lid-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Jute_Embroidered_Photo_Frame</h3>
+                    <h3>Curry Bowl</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -237,16 +716,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Jute_Photo_Frame-removebg-preview.png" alt="">
+                    <img src="./image/clay-Clay_Terracotta_Hari_Patil_Set-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Jute_Photo_Frame</h3>
+                    <h3>Terracotta Hari Patil</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -260,16 +739,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Jute_Toy_Storage-removebg-preview.png" alt="">
+                    <img src="./image/clay-Terracotta_Wall_hanging-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Jute_Toy_Storage</h3>
+                    <h3>Terracotta Wall hanging</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -283,16 +762,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/jute-Beige_Printed_Jute_Runner-removebg-preview.png" alt="">
+                    <img src="./image/Cotton-Aqua_Soft_Doll-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>jute-Beige_Printed_Jute_Runner</h3>
+                    <h3>Aqua Soft Doll</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -306,16 +785,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Magenta_Jute_Toy_Box-removebg-preview.png" alt="">
+                    <img src="./image/Iron-Baby_Rickshaw-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Magenta_Jute_Toy_Box</h3>
+                    <h3>Baby Rickshaw</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -329,16 +808,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Multicolour_Brush_Painted_Recycle_Handmade-Jute_Ball_Hanging-removebg-preview.png" alt="">
+                    <img src="./image/Iron-baby_Taxi-1228-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Multicolour_Brush_Painted_Recycle_Handmade-Jute_Ball_Hanging</h3>
+                    <h3>Baby Taxi</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -352,16 +831,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Natural_Jute_Coaster-removebg-preview.png" alt="">
+                    <img src="./image/wood-Mahogany_Three_Wheeler_Car-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Natural_Jute_Coaster</h3>
+                    <h3>Mahogany Three Wheeler</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -375,16 +854,16 @@
             </div>
             <div class="box">
                 <div class="icons">
-                    <button><i class="ri-shopping-cart-line"></i></button>
-                    <button><i class="ri-heart-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
                 </div>
                 <div class="image">
-                    <img src="./image/Red_Printed_Jute_Runner-removebg-preview.png" alt="">
+                    <img src="./image/wood-Wooden_Office_Stationary_Holder-removebg-preview.png" alt="">
                 </div>
                 <div class="content">
                     <div class="price">140</div>
-                    <h3>Red_Printed_Jute_Runner</h3>
+                    <h3>Wooden Office Stationary Holder</h3>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -396,13 +875,213 @@
                 </div>
 
             </div>
-           
-           
-           
-          
-           
-           
-           
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/wool-Coffee_Woollen_Carpet-removebg-preview.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Woollen Carpet</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/wool-Ivory_Woollen_Carpet-removebg-preview.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Ivory Woollen Carpet</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/wool-Beige_Woollen_Door_Mat-removebg-preview.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Woollen Door Mat</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/brass-Brass_Engraved_Wall_Hanging-removebg-preview.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Engraved Wall Hanging</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/brass-Brass_Oxidized_Seated_Deer-removebg-preview.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Oxidized Seated Deer</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/bamboo-Bamboo_Plant_Holder_-small-removebg-preview.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Bamboo Plant Holder</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/brass-Brass_Oxidized_Elephant-removebg-preview.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Oxidized Elephant</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/Brass-Brass__Rickshaw-removebg-previ.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Brass Rickshaw</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="ri-shopping-cart-line"></a>
+                    <a href="#" class="ri-heart-line"></a>
+                    <a href="#" class="ri-eye-line"></a>
+                </div>
+                <div class="image">
+                    <img src="./image/cotton-Bottle_Green_Cotton_Runner_Set-removebg-preview.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="price">140</div>
+                    <h3>Cotton Runner Set</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span> (50)</span>
+                    </div>
+                </div>
+
+            </div>
             
 
 
