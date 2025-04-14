@@ -1,16 +1,11 @@
-
 document.addEventListener('DOMContentLoaded', function () {
-    // Select the necessary elements
     let closer = document.querySelector('#closer');
     let navbar = document.querySelector('.navbar');
     let cartContainer = document.querySelector('.shopping-cart');
     let cartBtn = document.querySelector('#cart-btn');
     let closeCartBtn = document.querySelector('#close-cart'); // Ensure this ID exists in HTML
 
-    
-
-    //checkout
-    
+    // Checkout
     document.getElementById("proceed-to-payment").addEventListener("click", function (e) {
         e.preventDefault(); // prevent default <a> behavior
     
@@ -21,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Your cart is empty!");
         }
     });
-    
-    
+
     // Toggle Navbar
     document.querySelector('#menu-btn').onclick = () => {
         closer.style.display = "block";
@@ -54,30 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Sample product data (replace with actual product data from your store)
-    const products = [
-        { id: 1, name: "CHITROPOT", price: 140, image: "image/product12.jpg" },
-        { id: 2, name: "MATIR PATRO", price: 140, image: "image/product10.jpg" },
-        { id: 3, name: "BATI", price: 140, image: "image/product6.jpg" },
-        { id: 4, name: "MRITSRIJON", price: 140, image: "image/product5.jpg" }
-    ];
-
-    // Initialize an empty cart
-    let cart = [];
-
-    // Add product to cart
-    function addProductToCart(productId) {
-        const product = products.find(item => item.id === productId);
-        if (product) {
-            const existingProduct = cart.find(item => item.id === productId);
-            if (existingProduct) {
-                existingProduct.quantity += 1;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
-            renderCart();
-        }
-    }
+    // Initialize cart from localStorage if it exists
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     // Render the cart dynamically
     function renderCart() {
@@ -110,6 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     
         document.getElementById('total-price').innerText = totalPrice;
+
+        // Save the cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
     }
 
     // Event delegation for remove button (works for dynamically added items)
@@ -159,13 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('clear-all').addEventListener('click', clearAll);
     document.getElementById('update-cart').addEventListener('click', updateCart);
 
-    // Add products to cart for testing
-    addProductToCart(1);
-    addProductToCart(2);
-    addProductToCart(3);
-    addProductToCart(4);
-
-    // Add to cart from shop dynamically
+    // Add to cart from shop dynamically (you would need these buttons in your HTML)
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function() {
             const productId = parseInt(this.getAttribute('data-id'));
@@ -201,19 +170,21 @@ document.addEventListener('DOMContentLoaded', function () {
             updateQuantity(e);
         }
     });
+
+    // Initial cart render
+    renderCart();
 });
 
-
+// Slider functionality remains the same
 let slides = document.querySelectorAll(".slide"); //home slider part
 let currentIndex = 0;
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        slide.style.display = i === index ? "flex" : "none"; 
+    slide.classList.remove("active");
+    slide.style.display = i === index ? "flex" : "none"; 
     });
 }
-
 
 function next() {
     currentIndex = (currentIndex + 1) % slides.length;
@@ -225,6 +196,7 @@ function prev() {
     showSlide(currentIndex);
 }
 
+// Index
 showSlide(currentIndex);
 
 document.querySelector(".next-btn").addEventListener("click", next);
