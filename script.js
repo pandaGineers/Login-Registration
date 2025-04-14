@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Save the cart to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartItemCount(); // Update the cart item count
     }
 
     // Event delegation for remove button (works for dynamically added items)
@@ -170,6 +171,15 @@ document.addEventListener('DOMContentLoaded', function () {
             updateQuantity(e);
         }
     });
+
+    // Function to update cart item count
+    function updateCartItemCount() {
+        const itemCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total number of items
+        const cartItemCount = document.querySelector('#cart-btn .item-count'); // Make sure this element exists
+        if (cartItemCount) {
+            cartItemCount.textContent = itemCount > 0 ? itemCount : ''; // Show count if more than 0
+        }
+    }
 
     // Initial cart render
     renderCart();
