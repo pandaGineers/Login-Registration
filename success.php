@@ -57,9 +57,24 @@ if($code == 200 && !( curl_errno($handle)))
 
     echo $status." ".$tran_date." ".$tran_id." ".$card_type;
 
+	echo "<script>
+			// ✅ Set the payment success flag
+			localStorage.setItem('paymentSuccess', 'true');
+		</script>";
+
+
+	// Display a link or button to return home
+    echo '<div><a href="http://localhost:5173/home.html?payment=success">Go back to Home</a></div>';
+
+
+
+
 } else {
 
 	echo "Failed to connect with SSLCOMMERZ";
+
+	
 }
 
 ?>
+
