@@ -47,6 +47,43 @@ bullets.forEach((bullet) => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".image");
+  const bullets = document.querySelectorAll(".bullets span");
+  const textGroup = document.querySelector(".text-group");
+
+  let currentIndex = 0;  
+
+  const updateSlider = (index) => {
+    bullets.forEach((b) => b.classList.remove("active"));
+    bullets[index].classList.add("active");
+    textGroup.style.transform = `translateY(-${index * 2.2}rem)`;
+
+    images.forEach((img, i) => {  
+      img.classList.remove("show");
+      if (i === index) img.classList.add("show");
+    });
+  };
+
+  updateSlider(currentIndex);
+
+  images.forEach((image) => {
+    image.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateSlider(currentIndex);
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
 
 
   
