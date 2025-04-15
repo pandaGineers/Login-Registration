@@ -1,495 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceramic</title>
-
-    <!-- remix icon cdn link  -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="stylehome.css">
-    <link rel="stylesheet" href="styleshop.css">
-    <link href="index.html">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout Page</title>
+  <link rel="stylesheet" href="cart.css" />
+  <link rel="stylesheet" href="checkout.css" />
 </head>
-
 <body>
 
-    <!-- header section starts  -->
-    <header class="header">
-        <a href="shop.html" class="logo"><i class="ri-store-2-line">Karukunjo</i>
-        </a>
-        <form action="#" class="search-form">
-            <input type="search" placeholder="search here" id="search-box">
-            <label for="search-box" class="ri-search-line"></label>
-        </form>
+<!--Cart part on left-->
 
-        <div class="icons">
-            <div id="menu-btn" class="ri-menu-line"></div>
-            <div id="search-btn" class="ri-search-line"></div>
-            <div id="cart-btn" class="ri-shopping-cart-line">
-                <span class="item-count"></span>
-            </div>
-            <div id="login-btn" class="ri-user-line"></div>
-        </div>
-
-     </header>
-    <!-- header section ends  -->
-
-
-    <!-- closer btn  -->
-
-    <div id="closer" class="ri-close-line"></div>
-    <!-- navbar start  -->
-    <div class="navbar">
-        <a href="home.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="team.html">Team</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-
-
-     </div>
-    <!-- navbar end  -->
-
-
-    <!-- shopping cart start  -->
-    <div class="shopping-cart">
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product12.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product2.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product6.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product10.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <h3 class="total">Total : <span>560</span> </h3>
-        <a href="#" class="btn">Checkout Cart</a>
-
-     </div>
-    <!-- shopping cart end  -->
-     <div class="shopping-cart">
-        <!-- Cross button to close the cart -->
-        <button id="close-cart" class="close-cart-btn">×</button>
-
-        <div id="cart-items-container">
-            <!-- Cart items will be dynamically inserted here -->
-        </div>
-        <h3 class="total">Total: <span id="total-price">0</span> </h3>
-        <button id="update-cart" class="btn">Update Cart</button>
-        <a href="payment.html" id="proceed-to-payment" class="btn">Proceed to Payment</a>
-        <button id="clear-all" class="btn">Clear All</button>
-    </div>
-
-
-    <!-- login form start  -->
-    <div class="login-container" id="login-container">
-        <a href="index.html" class="login-button">Login Now</a>
-    </div>
-    <!-- login form end  -->
-
-
-    <!-- heading section start -->
-
-    <!-- category section start -->
-    <div class="category-navbar">
-        <div class="category-header">
-            <h1 class="title"><span>Our Categories</span> </h1>
-            <button class="menu-btn">&#9776;</button> <!-- Menu Icon (☰) -->
-        </div>
-        <div class="category-links">
-            <a href="bamboo.html">Bamboo</a>
-            <a href="brass.html">Brass</a>
+<div class="checkout-wrapper">
   
-            <a href="cane.html">Cane</a>
-            <a href="ceramic.html">Ceramic</a>
-            <a href="clay.html">Clay</a>
-            <a href="cotton.html">Cotton</a>
-            <a href="iron.html">Iron</a>
-            <a href="Jute.html">Jute</a>
-            <a href="leather.html">Leather</a>
-            <a href="paper.html">Paper</a>
-            <a href="wood.html">Wood</a>
-            <a href="wool.html">Wool</a>
-            
-            
-            
-            
-            
-        </div>
-    </div>
-    <section class="products">
+  <!-- Cart Section -->
+  <div class="cart-section">
+    <div class="shopping-cart active">
+      <h2>Your Cart</h2>
 
-        <h1 class="title"><span>Our Products</span> </h1>
-        <div class="box-container">
-           <!-- Ceramic: White Jamdani Printed Ceramic Bowl -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="45" 
-                data-name="White Jamdani Printed Ceramic Bowl" 
-                data-price="140" 
-                data-image="./image/ceramic-White_Jamdani_Printed_Ceramic_Bowl-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
+      <div id="cart-items-container">
+        <!-- Cart items will be injected here via JS -->
+      </div>
+
+      <div class="checkout-summary">
+        <h3 class="cart-total">Total:<span id="total-price">0</span> BDT</h3>
+        <button id="update-cart" class="btn">Update Cart</button>
+
+        <!-- New text and link below the Update Cart button -->
+        <p class="continue-shopping">
+          Not done yet? <a href="shop.html" id="continue-shopping-link">Continue Shopping</a>
+        </p>
+      </div>
     </div>
-    <div class="image">
-        <img src="./image/ceramic-White_Jamdani_Printed_Ceramic_Bowl-removebg-preview.png" alt="White Jamdani Printed Ceramic Bowl">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>White Jamdani Printed Ceramic Bowl</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
+  </div>
+
+  <!-- Checkout Form Section -->
+  <div class="checkout-container">
+    <h2>Shipping Information</h2>
+    <form id="checkout-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
+
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" placeholder="Street address" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. 0192045678" required />
+
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" placeholder="City" required />
+
+      <label for="postal">Postal Code</label>
+      <input type="text" id="postal" name="postal" placeholder="Postal Code" required />
+
+      <!-- New Textarea box for order notes -->
+      <label for="order-notes">Additional Instructions (Optional)</label>
+      <textarea id="order-notes" name="order-notes" placeholder="Any special instructions?" rows="4"></textarea>
+    </form>
+
+    <form action="http://localhost/payment.php" method="POST" target="_blank" id="payment-form">
+      <button type="submit" class="checkout-btn">Proceed to Payment</button>
+    </form>
+
+  </div>
+
 </div>
 
-<!-- Ceramic: White Jamdani Printed Ceramic Team Cup And Saucer -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="46" 
-                data-name="White Jamdani Printed Ceramic Team Cup And Saucer" 
-                data-price="140" 
-                data-image="./image/ceramic-White_Jamdani_Printed_Ceramic_Team_Cup_And_Saucer-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
-    </div>
-    <div class="image">
-        <img src="./image/ceramic-White_Jamdani_Printed_Ceramic_Team_Cup_And_Saucer-removebg-preview.png" alt="White Jamdani Printed Ceramic Team Cup And Saucer">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>White Jamdani Printed Ceramic Team Cup And Saucer</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
-</div>
-
-<!-- Ceramic: Yellow Ceramic Cup -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="47" 
-                data-name="Yellow Ceramic Cup" 
-                data-price="140" 
-                data-image="./image/ceramic-Yellow_Ceramic_Cup-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
-    </div>
-    <div class="image">
-        <img src="./image/ceramic-Yellow_Ceramic_Cup-removebg-preview.png" alt="Yellow Ceramic Cup">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>Yellow Ceramic Cup</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
-</div>
-
-<!-- Ceramic: Red Printed Ceramic Cup and Saucer -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="48" 
-                data-name="Red Printed Ceramic Cup and Saucer" 
-                data-price="140" 
-                data-image="./image/cerramic-Red_Printed_Ceramic_Cup_and_Saucer-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
-    </div>
-    <div class="image">
-        <img src="./image/cerramic-Red_Printed_Ceramic_Cup_and_Saucer-removebg-preview.png" alt="Red Printed Ceramic Cup and Saucer">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>Red Printed Ceramic Cup and Saucer</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
-</div>
-
-<!-- Ceramic: Pink Printed Ceramic Mug -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="49" 
-                data-name="Pink Printed Ceramic Mug" 
-                data-price="140" 
-                data-image="./image/ceramic-Pink_Printed__Ceramic_Mug-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
-    </div>
-    <div class="image">
-        <img src="./image/ceramic-Pink_Printed__Ceramic_Mug-removebg-preview.png" alt="Pink Printed Ceramic Mug">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>Pink Printed Ceramic Mug</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
-</div>
-
-<!-- Ceramic: Pink Ceramic Bubble Bowl -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="50" 
-                data-name="Pink Ceramic Bubble Bowl" 
-                data-price="140" 
-                data-image="./image/ceramic-Pink_Ceramic_Bubble_Bowl_-13_cm-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
-    </div>
-    <div class="image">
-        <img src="./image/ceramic-Pink_Ceramic_Bubble_Bowl_-13_cm-removebg-preview.png" alt="Pink Ceramic Bubble Bowl">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>Pink Ceramic Bubble Bowl</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
-</div>
-
-<!-- Ceramic: Gray Ceramic Cup -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="51" 
-                data-name="Gray Ceramic Cup" 
-                data-price="140" 
-                data-image="./image/cerramic-Gray_Ceramic_Cup-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
-    </div>
-    <div class="image">
-        <img src="./image/cerramic-Gray_Ceramic_Cup-removebg-preview.png" alt="Gray Ceramic Cup">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>Gray Ceramic Cup</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
-</div>
-
-<!-- Ceramic: Black-red Ceramic Cup Saucer -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="52" 
-                data-name="Black-red Ceramic Cup Saucer" 
-                data-price="140" 
-                data-image="./image/ceramic-Black-red_Ceramic_Cup_Saucer-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
-    </div>
-    <div class="image">
-        <img src="./image/ceramic-Black-red_Ceramic_Cup_Saucer-removebg-preview.png" alt="Black-red Ceramic Cup Saucer">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>Black-red Ceramic Cup Saucer</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
-</div>
-
-<!-- Ceramic: Rickshaw Art Printed Cup And Saucer -->
-<div class="box">
-    <div class="icons">
-        <button class="add-to-cart" 
-                data-id="53" 
-                data-name="Rickshaw Art Printed Cup And Saucer" 
-                data-price="140" 
-                data-image="./image/ceramic-Rickshaw_Art_Printed_Cup_And_Saucer-removebg-preview.png">
-            <i class="ri-shopping-cart-line"></i>
-        </button>
-        <button><i class="ri-heart-line"></i></button>
-        <button><i class="ri-eye-line"></i></button>
-    </div>
-    <div class="image">
-        <img src="./image/ceramic-Rickshaw_Art_Printed_Cup_And_Saucer-removebg-preview.png" alt="Rickshaw Art Printed Cup And Saucer">
-    </div>
-    <div class="content">
-        <div class="price">140</div>
-        <h3>Rickshaw Art Printed Cup And Saucer</h3>
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span> (50)</span>
-        </div>
-    </div>
-</div>
-
-            
-        </div>
-    </section>
-    <!-- products section end -->
-
-
-
-
-
-
-    <!-- footer section start  -->
-    <section class="footer">
-        <div class="box-container">
-            <div class="box">
-                <h3>quick links</h3>
-                <a href="home.html"><i class="ri-arrow-right-line"></i>Home</a>
-                <a href="shop.html"><i class="ri-arrow-right-line"></i>Shop</a>
-                <a href="about.html"><i class="ri-arrow-right-line"></i>About</a>
-                <a href="team.html"><i class="ri-arrow-right-line"></i>Team</a>
-                <a href="blog.html"><i class="ri-arrow-right-line"></i>Blog</a>
-                <a href="contact.html"><i class="ri-arrow-right-line"></i>Contact</a>
-            </div>
-
-            <div class="box">
-                <h3>extra links</h3>
-                <a href="#"><i class="ri-arrow-right-line"></i>My Order</a>
-                <a href="#"><i class="ri-arrow-right-line"></i>My Wishlist</a>
-                <a href="#"><i class="ri-arrow-right-line"></i>My Account</a>
-                <a href="#"><i class="ri-arrow-right-line"></i>My Favorite</a>
-                <a href="#"><i class="ri-arrow-right-line"></i>Terms of Users</a>
-                
-            </div>
-            <div class="box">
-                <h3>extra links</h3>
-                <a href="#"><i class="ri-facebook-fill"></i>Facebook</a>
-                <a href="#"><i class="ri-instagram-fill"></i>Instagram</a>
-               
-                
-            </div>
-            
-        </div>
-
-
-     </section> 
-     <section class="credit">
-        created by pandaginners | all rights reserved!
-
-     </section>
-    <!-- footer section end  -->
-
-    <!-- custom js file link  -->
-    <script src="script.js"></script>
-    <script src="shop.js"></script>
+<script src="checkout.js"></script>
 
 </body>
-
 </html>
