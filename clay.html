@@ -34,7 +34,9 @@
         <div class="icons">
             <div id="menu-btn" class="ri-menu-line"></div>
             <div id="search-btn" class="ri-search-line"></div>
-            <div id="cart-btn" class="ri-shopping-cart-line"></div>
+            <div id="cart-btn" class="ri-shopping-cart-line">
+                <span class="item-count"></span>
+            </div>
             <div id="login-btn" class="ri-user-line"></div>
         </div>
 
@@ -44,7 +46,6 @@
 
     <!-- closer btn  -->
 
-    <div id="closer" class="ri-close-line"></div>
     <!-- navbar start  -->
     <div class="navbar">
         <a href="home.html">Home</a>
@@ -53,64 +54,14 @@
         <a href="team.html">Team</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
-
+        <div id="closer" class="ri-close-line"></div>
 
      </div>
     <!-- navbar end  -->
 
 
-    <!-- shopping cart start  -->
-    <div class="shopping-cart">
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product12.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product2.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product6.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <div class="box">
-            <i class="ri-close-line close-icon"></i>
-            <img src="./image/product10.jpg" alt="">
-            <div class="content">
-                <h3>modern furniture</h3>
-                <span class="quantity">1</span>
-                <span class="multiply">x</span>
-                <span class="price">140</span>
-                
-            </div>
-        </div>
-        <h3 class="total">Total : <span>560</span> </h3>
-        <a href="#" class="btn">Checkout Cart</a>
-
-     </div>
-    <!-- shopping cart end  -->
-     <div class="shopping-cart">
+       <!-- shopping cart start  -->
+       <div class="shopping-cart">
         <!-- Cross button to close the cart -->
         <button id="close-cart" class="close-cart-btn">×</button>
 
@@ -119,9 +70,10 @@
         </div>
         <h3 class="total">Total: <span id="total-price">0</span> </h3>
         <button id="update-cart" class="btn">Update Cart</button>
-        <a href="payment.html" id="proceed-to-payment" class="btn">Proceed to Payment</a>
+        <a href="checkout.html" id="proceed-to-payment" class="btn">Proceed to Checkout</a>
         <button id="clear-all" class="btn">Clear All</button>
     </div>
+    <!-- shopping cart end  -->
 
 
     <!-- login form start  -->
@@ -133,10 +85,33 @@
 
     <!-- heading section start -->
 
-    <section class="heading">
-        <h3>Our Shop</h3>
-        <p><a href="home.html">Home</a> / <span>Shop</span></p>
-    </section>
+    <!-- category section start -->
+    <div class="category-navbar">
+        <div class="category-header">
+            <h1 class="title"><span>Our Categories</span> </h1>
+            <button class="menu-btn">&#9776;</button> <!-- Menu Icon (☰) -->
+        </div>
+        <div class="category-links">
+            <a href="bamboo.html">Bamboo</a>
+            <a href="brass.html">Brass</a>
+  
+            <a href="cane.html">Cane</a>
+            <a href="ceramic.html">Ceramic</a>
+            <a href="clay.html">Clay</a>
+            <a href="cotton.html">Cotton</a>
+            <a href="iron.html">Iron</a>
+            <a href="Jute.html">Jute</a>
+            <a href="leather.html">Leather</a>
+            <a href="paper.html">Paper</a>
+            <a href="wood.html">Wood</a>
+            <a href="wool.html">Wool</a>
+            
+            
+            
+            
+            
+        </div>
+    </div>
     <section class="products">
 
         <h1 class="title"><span>Our Products</span> </h1>
@@ -763,6 +738,7 @@
 
     <!-- custom js file link  -->
     <script src="script.js"></script>
+    <script src="shop.js"></script>
 
 </body>
 
