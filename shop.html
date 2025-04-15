@@ -34,7 +34,9 @@
         <div class="icons">
             <div id="menu-btn" class="ri-menu-line"></div>
             <div id="search-btn" class="ri-search-line"></div>
-            <div id="cart-btn" class="ri-shopping-cart-line"></div>
+            <div id="cart-btn" class="ri-shopping-cart-line">
+                <span class="item-count"></span>
+            </div>
             <div id="login-btn" class="ri-user-line"></div>
         </div>
 
@@ -69,7 +71,7 @@
         </div>
         <h3 class="total">Total: <span id="total-price">0</span> </h3>
         <button id="update-cart" class="btn">Update Cart</button>
-        <a href="checkout.html" id="proceed-to-payment" class="btn">Proceed to Payment</a>
+        <a href="checkout.html" id="proceed-to-payment" class="btn">Proceed to Checkout</a>
         <button id="clear-all" class="btn">Clear All</button>
     </div>
     <!-- shopping cart end  -->
@@ -84,37 +86,36 @@
 
     <!-- heading section start -->
 
-    <section class="heading">
-        <h3>Our Shop</h3>
-        <p><a href="home.html">Home</a> / <span>Shop</span></p>
-    </section>
+
 
     <!-- heading section end -->
 
 
     <!-- category section start -->
-   <div class="category-navbar">
+    <div class="category-navbar">
         <div class="category-header">
-            <h1 class="title">
-                <span>Our Categories</span>
-                <button class="menu-btn">&#9776;</button> <!-- Moved here -->
-            </h1>
+            <h1 class="title"><span>Our Categories</span> </h1>
+            <button class="menu-btn">&#9776;</button> <!-- Menu Icon (☰) -->
         </div>
         <div class="category-links">
+            <a href="bamboo.html">Bamboo</a>
+            <a href="brass.html">Brass</a>
+  
+            <a href="cane.html">Cane</a>
+            <a href="ceramic.html">Ceramic</a>
+            <a href="clay.html">Clay</a>
+            <a href="cotton.html">Cotton</a>
+            <a href="iron.html">Iron</a>
             <a href="Jute.html">Jute</a>
-            <a href="Cotton.html">Cotton</a>
-            <a href="Ceramic.html">Ceramic</a>
-            <a href="Clay.html">Clay</a>
-            <a href="Bamboo.html">Bamboo</a>
-            <a href="#">Date Leaf</a>
-            <a href="Cane.html">Cane</a>
-            <a href="Wood.html">Wood</a>
-            <a href="Iron.html">Iron</a>
-            <a href="#">Coconut Shell</a>
-            <a href="Paper.html">Paper</a>
-            <a href="Wool.html">Wool</a>
-            <a href="Leather.html">Leather</a>
-            <a href="Brass.html">Brass</a>
+            <a href="leather.html">Leather</a>
+            <a href="paper.html">Paper</a>
+            <a href="wood.html">Wood</a>
+            <a href="wool.html">Wool</a>
+            
+            
+            
+            
+            
         </div>
     </div>
     
@@ -688,6 +689,7 @@
 
     <!-- custom js file link  -->
     <script src="script.js"></script>
+    <script src="shop.js"></script>
 
 </body>
 
