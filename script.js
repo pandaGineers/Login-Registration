@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+const paymentSuccess = urlParams.get('payment');
+
+if (paymentSuccess === 'success') {
+    console.log("Payment success detected via URL, clearing cart.");
+
+    // Clear cart
+    localStorage.removeItem('cart');
+
+    // Optionally remove query param from URL to prevent it firing again on refresh
+    const url = new URL(window.location);
+    url.searchParams.delete('payment');
+    window.history.replaceState({}, document.title, url.toString());
+}
+
+
     let closer = document.querySelector('#closer');
     let navbar = document.querySelector('.navbar');
     let cartContainer = document.querySelector('.shopping-cart');
