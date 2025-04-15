@@ -78,16 +78,7 @@
                     </p>
                
                     <br>
-                    <div class="input-wrap1">
-                      <button id="phone" class="phone">
-                        <img src="./image/otp.png" alt="phone icon" class="phone-icon">
-                      </button>
-
-                      <button id="facebook" class="facebook">
-                        <img src="./image/facebook1.png" alt="facebook icon" class="facebook-icon">
-                      </button>
-
-                    </div>
+                    
                 
               </div>
             </form>
@@ -183,5 +174,21 @@
     <!-- Javascript file -->
 
     <script src="app.js"></script>
+
+    <script> //phone_verification
+      document.getElementById("phone").addEventListener("click", function() {
+          var screenWidth = window.innerWidth;
+          var screenHeight = window.innerHeight;
+
+          var width = 400;
+          var height = 500;
+  
+          var left = (screenWidth / 2) - (width / 2);
+          var top = (screenHeight / 2) - (height / 2);
+
+          window.open("phone.html", "PhoneVerification", `width=${width},height=${height},left=${left},top=${top}`);
+      });
+  </script>
+
   </body>
 </html>
